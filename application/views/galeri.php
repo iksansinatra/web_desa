@@ -1,0 +1,161 @@
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+      Galeri UHO
+      </h1>
+      <br>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" title="Tambah Galeri"><i class="fa fa-plus"></i> Tambah</button>
+      <!-- Modal Insert-->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Tambah Galeri Baru</h4>
+            </div>
+            <div class="modal-body">
+              <?php echo form_open_multipart("galeri/input");?>
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="password">Judul Galeri</label>
+                      <input type="text" class="form-control" id="password" placeholder="Judul Gambar" name="galeri" required="required">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Keterangan</label>
+                      <input type="text" class="form-control" id="password" placeholder="Keterangan"  name="ket_galeri" required="required">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Kategori</label>
+                      <input type="text" class="form-control" id="password" placeholder="Kategori (e.g 1,2,3, dst)"  name="kategori" required="required">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Gambar</label>
+                      <input type="file" class="form-control" id="password" placeholder="Gambar" name="gambar" >
+                  </div>
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary" alt="Tambah Galeri">Tambah</button>
+                </div><!-- /.box-footer -->
+              <?php echo form_close(); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Daftar Galeri</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-bordered table-striped" id="example1">
+                <thead>
+                  <tr>
+                    <th style="width: 10px">No</th>
+                    <th>Nama Galeri</th>
+                    <th>Keterangan</th>
+                    <th>Kategori</th>
+                    <th>Gambar</th>
+                    <th>Status</th>
+                    <th style="width: 120px">Aksi</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                <?php
+                  $no=1;
+                  foreach ($galeri as $key) {
+                    $id=$key->id_galeri;
+
+                ?>
+                  <tr>
+                    <td><?php echo $no; ?></td>
+                    <td><?php echo $key->galeri;?></td>
+                    <td><?php echo $key->ket_galeri;?></td>
+                    <td><?php echo $key->kategori;?></td>
+                    <td><a href="../assets/galeri/<?php echo $key->gambar;?>"><img src="<?php echo base_url()?>/assets/galeri/<?php echo $key->gambar;?>" title="<?php echo $key->galeri;?>" width="100" height="100"></a></td>
+                    <td><span class="label label-danger">Notification</span></td>
+                    <td>
+
+                      <button type="button" class="btn btn-xs btn-success" title="Edit Gambar" data-toggle="modal" data-target="#edit<?php echo $id;?>"><i class="fa fa-edit"></i></button>
+                      <button type="button" class="btn btn-xs btn-danger" title="Hapus Gambar" data-toggle="modal" data-target="#delete<?php echo $id;?>"><i class="fa fa-trash"></i></button>
+
+
+                        <!-- Modal Update-->
+
+                    </td>
+                  </tr>
+                  <div class="modal fade" id="edit<?php echo $id;?>" role="dialog">
+                    <div class="modal-dialog" >
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Ubah Data Galeri</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="box-body">
+                           <?php echo form_open_multipart("galeri/edit");?>
+                             <div class="form-group">
+                              <label for="password">Nama Galeri</label>
+                                <input type="text" class="form-control"  value='<?php echo $key->galeri; ?>' name="galeri" required="required">
+                                <input type="hidden" class="form-control"   value='<?php echo $key->id_galeri; ?>' name="id_galeri" required="required" readonly>
+                            </div>
+                            <div class="form-group">
+                              <label for="password">Keterangan</label>
+                                <input type="text" class="form-control"  value='<?php echo $key->ket_galeri;?>' name="ket_galeri" required="required">
+                            </div>
+                            <div class="form-group">
+                              <label for="password">Kategori</label>
+                                <input type="text" class="form-control" placeholder="Kategori (e.g 1,2,3, dst)"  value='<?php echo $key->kategori;?>' name="kategori" required="required">
+                            </div>
+                            <div class="form-group">
+                              <label for="password">Gambar</label>
+                                <input type="file" class="form-control"  value='<?php echo $key->gambar;?>' name="gambar" required="required">
+                            </div>
+                          </div><!-- /.box-body -->
+                          <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">Ubah</button>
+                          </div>
+                        <?php echo form_close(); ?>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Modal Delete-->
+                  <div class="modal fade" id="delete<?php echo $id;?>" role="dialog">
+                    <div class="modal-dialog">
+                    <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Hapus Galeri <?php echo $key->galeri ?></h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="alert alert-danger">Apakah anda yakin ingin menghapus Galeri ini?</div>
+                        </div>
+                        <div class="modal-footer">
+                        <?php echo form_open("galeri/delete");?>
+                          <input type="hidden" class="form-control" value="<?php echo $key->id_galeri?>" name="id_galeri" required="required">
+                          <button type="submit" class="btn btn-danger">&nbsp;Ya</button>
+                          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
+                        <?php echo form_close(); ?>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                <?php
+                  $no++;
+                  }
+                ?>
+                </tbody>
+              </table>
+            </div><!-- /.box-body -->
+          </div><!-- /.box-primary -->
+        </div><!-- /.col-md -->
+      </div><!-- /.row -->
+    </section>
+  </div>
