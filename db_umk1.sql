@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30 Sep 2018 pada 09.37
+-- Generation Time: 02 Okt 2018 pada 17.17
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -91,6 +91,20 @@ INSERT INTO `table_berkas` (`berkas_id`, `berkas_name`, `berkas_desc`, `berkas_i
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `table_desa`
+--
+
+CREATE TABLE IF NOT EXISTS `table_desa` (
+  `sejarah_id` int(11) NOT NULL,
+  `sejarah_title` varchar(200) NOT NULL,
+  `sejarah_desa` text NOT NULL,
+  `sejarah_pemerintahan` text NOT NULL,
+  `sejarah_image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `table_fasilitas`
 --
 
@@ -128,29 +142,6 @@ CREATE TABLE IF NOT EXISTS `table_groups` (
 INSERT INTO `table_groups` (`group_id`, `group_name`, `group_desc`) VALUES
 (1, 'admin', 'only admin'),
 (2, 'user', 'only user');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `table_guidecategory`
---
-
-CREATE TABLE IF NOT EXISTS `table_guidecategory` (
-  `guidecategory_id` int(11) NOT NULL,
-  `guidecategory_name` varchar(200) NOT NULL,
-  `guidecategory_desc` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `table_guidecategory`
---
-
-INSERT INTO `table_guidecategory` (`guidecategory_id`, `guidecategory_name`, `guidecategory_desc`) VALUES
-(1, 'Statuta UMK', ''),
-(2, 'Panduan Akademik', ''),
-(3, 'Panduan Skripsi', ''),
-(4, 'Panduan PKL', ''),
-(5, 'Panduan KK', '');
 
 -- --------------------------------------------------------
 
@@ -247,6 +238,19 @@ INSERT INTO `table_kegiatan` (`image_id`, `image_name`, `image_desc`, `image_fil
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `table_kontak`
+--
+
+CREATE TABLE IF NOT EXISTS `table_kontak` (
+  `kontak_id` int(11) NOT NULL,
+  `kontak_name` varchar(200) NOT NULL,
+  `kontak_desc` text NOT NULL,
+  `kontak_image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `table_link`
 --
 
@@ -262,29 +266,6 @@ CREATE TABLE IF NOT EXISTS `table_link` (
 
 INSERT INTO `table_link` (`link_id`, `link_title`, `link_url`) VALUES
 (2, 'google', 'https://www.google.com');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `table_major`
---
-
-CREATE TABLE IF NOT EXISTS `table_major` (
-  `major_id` int(11) NOT NULL,
-  `major_name` varchar(200) NOT NULL,
-  `major_desc` text NOT NULL,
-  `major_link` text NOT NULL,
-  `major_cost` double NOT NULL,
-  `faculty_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `table_major`
---
-
-INSERT INTO `table_major` (`major_id`, `major_name`, `major_desc`, `major_link`, `major_cost`, `faculty_id`) VALUES
-(8, 'xxx', 'www', 'https://www.google.com', 100000, 2),
-(9, 'ccc', 'aaa', 'https://www.google.com dfgdfgdfg', 1233, 1);
 
 -- --------------------------------------------------------
 
@@ -504,14 +485,15 @@ CREATE TABLE IF NOT EXISTS `table_video` (
   `video_name` varchar(200) NOT NULL,
   `video_desc` text NOT NULL,
   `video_file` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_video`
 --
 
 INSERT INTO `table_video` (`video_id`, `video_name`, `video_desc`, `video_file`) VALUES
-(13, 'gdh', '                                                                                                                                        bvehbgf                                                                                                                                ', 'vid-20180929181823.MP4');
+(13, 'gdh', '                                                                                                                                        bvehbgf                                                                                                                                ', 'vid-20180929181823.MP4'),
+(14, 'indra', 'BABI', 'vid-20180930193731.MP4');
 
 -- --------------------------------------------------------
 
@@ -525,14 +507,14 @@ CREATE TABLE IF NOT EXISTS `table_visi` (
   `visi_visi` text NOT NULL,
   `visi_misi` text NOT NULL,
   `visi_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_visi`
 --
 
 INSERT INTO `table_visi` (`visi_id`, `visi_tahun`, `visi_visi`, `visi_misi`, `visi_image`) VALUES
-(1, 0, 'b', '', '');
+(2, 2008, 'mantap', '<p>ngeri</p>\r\n', 'file_1538318092.JPG');
 
 --
 -- Indexes for dumped tables
@@ -557,6 +539,12 @@ ALTER TABLE `table_berkas`
   ADD PRIMARY KEY (`berkas_id`);
 
 --
+-- Indexes for table `table_desa`
+--
+ALTER TABLE `table_desa`
+  ADD PRIMARY KEY (`sejarah_id`);
+
+--
 -- Indexes for table `table_fasilitas`
 --
 ALTER TABLE `table_fasilitas`
@@ -567,12 +555,6 @@ ALTER TABLE `table_fasilitas`
 --
 ALTER TABLE `table_groups`
   ADD PRIMARY KEY (`group_id`);
-
---
--- Indexes for table `table_guidecategory`
---
-ALTER TABLE `table_guidecategory`
-  ADD PRIMARY KEY (`guidecategory_id`);
 
 --
 -- Indexes for table `table_image`
@@ -606,17 +588,16 @@ ALTER TABLE `table_kegiatan`
   ADD PRIMARY KEY (`image_id`);
 
 --
+-- Indexes for table `table_kontak`
+--
+ALTER TABLE `table_kontak`
+  ADD PRIMARY KEY (`kontak_id`);
+
+--
 -- Indexes for table `table_link`
 --
 ALTER TABLE `table_link`
   ADD PRIMARY KEY (`link_id`);
-
---
--- Indexes for table `table_major`
---
-ALTER TABLE `table_major`
-  ADD PRIMARY KEY (`major_id`),
-  ADD KEY `faculty_id` (`faculty_id`);
 
 --
 -- Indexes for table `table_news`
@@ -715,6 +696,11 @@ ALTER TABLE `table_belanja`
 ALTER TABLE `table_berkas`
   MODIFY `berkas_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `table_desa`
+--
+ALTER TABLE `table_desa`
+  MODIFY `sejarah_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `table_fasilitas`
 --
 ALTER TABLE `table_fasilitas`
@@ -724,11 +710,6 @@ ALTER TABLE `table_fasilitas`
 --
 ALTER TABLE `table_groups`
   MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `table_guidecategory`
---
-ALTER TABLE `table_guidecategory`
-  MODIFY `guidecategory_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `table_image`
 --
@@ -755,15 +736,15 @@ ALTER TABLE `table_jobtips`
 ALTER TABLE `table_kegiatan`
   MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT for table `table_kontak`
+--
+ALTER TABLE `table_kontak`
+  MODIFY `kontak_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `table_link`
 --
 ALTER TABLE `table_link`
   MODIFY `link_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `table_major`
---
-ALTER TABLE `table_major`
-  MODIFY `major_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `table_news`
 --
@@ -818,12 +799,12 @@ ALTER TABLE `table_userprofile`
 -- AUTO_INCREMENT for table `table_video`
 --
 ALTER TABLE `table_video`
-  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `table_visi`
 --
 ALTER TABLE `table_visi`
-  MODIFY `visi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `visi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
