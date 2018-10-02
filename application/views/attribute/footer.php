@@ -229,10 +229,10 @@
 <script src="<?php echo  base_url();?>assets/date_picker_bootstrap/js/locales/bootstrap-datetimepicker.id.js"charset="UTF-8"></script>
 <!-- <script type="text/javascript">
             $(document).ready(function(){
- 
+
                 // Format mata uang.
                 $( '.sembarang' ).mask('0.000.000.000', {reverse: true});
- 
+
             })
         </script> -->
 <script>$(document).ready(function() {
@@ -294,7 +294,7 @@
           value = min;
         else if(value > max)
           value = max;
-        $(this).val(value.toFixed(2)); 
+        $(this).val(value.toFixed(2));
       });
     });
   };
@@ -336,5 +336,12 @@ function isNumberKey(evt){
 
 
 <script type="text/javascript" src="<?php echo base_url();?>assets/ckeditor/ckeditor.js"></script>
+
+<script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+                CKEDITOR.replace( 'editor2' );
+            </script>
 </body>
 </html>
