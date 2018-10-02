@@ -28,9 +28,9 @@ class Berita extends CI_Controller {
        $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
        $config['upload_path'] = './assets/berita/'; //path folder
        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp|docx|doc|xls|xlsx|pdf'; //type yang dapat diakses bisa anda sesuaikan
-       $config['max_size'] = '10240'; //maksimum besar file 2M
-       $config['max_width']  = '3000'; //lebar maksimum 1288 px
-       $config['max_height']  = '3000'; //tinggi maksimu 768 px
+       $config['max_size'] = '102400'; //maksimum besar file 2M
+       // $config['max_width']  = '3000'; //lebar maksimum 1288 px
+       // $config['max_height']  = '3000'; //tinggi maksimu 768 px
        $config['file_name'] = $nmfile; //nama yang terupload nantinya
 
        $this->upload->initialize($config);
@@ -57,6 +57,7 @@ class Berita extends CI_Controller {
         $data['news_content'] = $this->input->post('news_content');
         $data['news_author'] = $this->input->post('news_author');
         $data['news_date'] = $this->input->post('news_date');
+        $data['news_image'] = $this->input->post('news_image');
        /*  $data['newscategory_id'] = $this->input->post('newscategory_id'); */
 
 
@@ -69,20 +70,21 @@ class Berita extends CI_Controller {
     }
 
     public function edit() {
+      
       $this->load->library('upload');
-
       $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
       $config['upload_path'] = './assets/berita/'; //path folder
       $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp|docx|doc|xls|xlsx|pdf'; //type yang dapat diakses bisa anda sesuaikan
-      $config['max_size'] = '10240'; //maksimum besar file 2M
-      $config['max_width']  = '3000'; //lebar maksimum 1288 px
-      $config['max_height']  = '3000'; //tinggi maksimu 768 px
+      $config['max_size'] = '102400'; //maksimum besar file 2M
+      // $config['max_width']  = '3000'; //lebar maksimum 1288 px
+      // $config['max_height']  = '3000'; //tinggi maksimu 768 px
       $config['file_name'] = $nmfile; //nama yang terupload nantinya
 
       $this->upload->initialize($config);
 
       if($_FILES['gambar']['name'])
        {
+        unlink('./assets/berita/'.$this->input->post('news_image'));
            if ($this->upload->do_upload('gambar'))
            {
                $gbr = $this->upload->data();
@@ -106,6 +108,7 @@ class Berita extends CI_Controller {
          $data['news_content'] = $this->input->post('news_content');
          $data['news_author'] = $this->input->post('news_author');
          $data['news_date'] = $this->input->post('news_date');
+         $data['news_image'] = $this->input->post('news_image');
          // $data['newscategory_id'] = $this->input->post('newscategory_id');
        //call function
        $this->M_berita->edit($data);
@@ -117,9 +120,8 @@ class Berita extends CI_Controller {
 
     public function delete() {
 
-        if($this->input->post('news_id')!="") {
+unlink('./assets/berita/'.$this->input->post('news_image'));
             $this->M_berita->delete($this->input->post('news_id'));
-        }
         redirect('Berita');
 
     }

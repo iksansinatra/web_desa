@@ -112,6 +112,7 @@
                               <label for="password">Nama Berkas</label>
                               <input type="text" class="form-control"  value='<?php echo $key->berkas_name; ?>' name="berkas_name" required="required">
                               <input type="hidden" class="form-control"   value='<?php echo $key->berkas_id; ?>' name="berkas_id" required="required" >
+                              <input type="hidden" class="form-control" value='<?php echo $key->berkas_image; ?>' name="berkas_image" required="required" readonly>
                             </div>
 							<div class="form-group">
                               <label for="password">Mekanisme</label>
@@ -137,22 +138,23 @@
                   <div class="modal fade" id="delete<?php echo $id;?>" role="dialog">
                     <div class="modal-dialog">
                     <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Hapus Berkas Desa <?php echo $key->berkas_name ?></h4>
-                        </div>
-                        <div class="modal-body">
-                          <div class="alert alert-danger">Apakah anda yakin ingin menghapus berkas desa ini?</div>
-                        </div>
-                        <div class="modal-footer">
-                        <?php echo form_open("Berkas/delete");?>
-                          <input type="hidden" class="form-control" value="<?php echo $key->berkas_id?>" name="berkas_id" required="required">
-                          <button type="submit" class="btn btn-danger">&nbsp;Ya</button>
-                          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
-                        <?php echo form_close(); ?>
-                      </div>
-                      </div>
+                    <div class="modal-content">
+                            <?php echo form_open("Berkas/delete");?>
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Hapus Berkas</h4>
+                            </div>
+                            <div class="modal-body">
+                              <div class="alert alert-danger">Apakah anda yakin ingin menghapus "<b><?php echo $key->berkas_name?></b>" ?</div>
+                            </div>
+                            <div class="modal-footer">
+                              <input type="hidden" class="form-control" value="<?php echo $key->berkas_id?>" name="berkas_id" required="required">
+                              <input type="hidden" class="form-control" value="<?php echo $key->berkas_image?>" name="berkas_image" required="required">
+                              <button type="submit" class="btn btn-danger">Ya</button>
+                              <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
+                            </div>
+                            <?php echo form_close(); ?>
+                          </div>
                     </div>
                   </div>
                 <?php

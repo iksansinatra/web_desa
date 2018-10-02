@@ -75,6 +75,7 @@ public function input() {
 
         if($_FILES['gambar']['name'])
          {
+          unlink('./assets/fasilitas/'.$this->input->post('fasilitas_image'));
              if ($this->upload->do_upload('gambar'))
              {
                  $gbr = $this->upload->data();
@@ -93,6 +94,7 @@ public function input() {
            $data['fasilitas_id'] = $this->input->post('fasilitas_id');
            $data['fasilitas_name'] = $this->input->post('fasilitas_name');
            $data['fasilitas_desc'] = $this->input->post('fasilitas_desc');
+           $data['fasilitas_image'] = $this->input->post('fasilitas_image');
          //call function
          $this->M_fasilitas->edit($data);
          //redirect to page
@@ -103,9 +105,9 @@ public function input() {
 
     public function delete() {
 
-        if($this->input->post('fasilitas_id')!="") {
+        unlink('./assets/fasilitas/'.$this->input->post('fasilitas_image'));
             $this->M_fasilitas->delete($this->input->post('fasilitas_id'));
-        }
+        
         redirect('Fasilitas');
 
     }

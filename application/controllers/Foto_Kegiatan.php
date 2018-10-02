@@ -59,48 +59,9 @@ public function input() {
       }
           redirect('Foto_Kegiatan'); //jika berhasil maka akan ditampilkan view vupload
     }
-    // public function input() {
-       // $this->load->library('upload');
-       // $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
-       // $config['upload_path'] = './assets/foto_kegiatan/'; //path folder
-       // $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-       // $config['max_size'] = '102400'; //maksimum besar file 2M
-       // $config['max_width']  = '9999'; //lebar maksimum 1288 px
-       // $config['max_height']  = '9999'; //tinggi maksimu 768 px
-       // $config['file_name'] = $nmfile; //nama yang terupload nantinya
-
-       // $this->upload->initialize($config);
-
-       // if($_FILES['gambar']['name'])
-        // {
-            // if ($this->upload->do_upload('gambar'))
-            // {
-                // $gbr = $this->upload->data();
-                // $data = array(
-               
-				// 'image_file' =>$gbr['file_name'],
-                  // 'image_name' =>$this->input->post('image_name'),
-				  // 'image_desc' =>$this->input->post('image_desc'),
-                    // );
-                // $this->M_foto_kegiatan->input($data);
-            // }
-        // }
-
-        // else
-        // {
-        // $data['image_name'] = $this->input->post('image_name');
-        // $data['image_desc'] = $this->input->post('image_desc');
-        // $data['image_file'] = $this->input->post('image_file');
-
-        // call function
-        // $this->M_foto_kegiatan->input($data);
-        // redirect to page
-
-      // }
-          // redirect('Foto_Kegiatan'); //jika berhasil maka akan ditampilkan view vupload
-    // }
-
+    
     public function edit() {
+        
         //get data
         $this->load->library('upload');
         $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
@@ -115,6 +76,7 @@ public function input() {
 
         if($_FILES['gambar']['name'])
          {
+          unlink('./assets/foto_kegiatan/'.$this->input->post('image_file'));
              if ($this->upload->do_upload('gambar'))
              {
                  $gbr = $this->upload->data();
@@ -140,6 +102,7 @@ public function input() {
            $data['image_id'] = $this->input->post('image_id');
            $data['image_name'] = $this->input->post('image_name');
            $data['image_desc'] = $this->input->post('image_desc');
+           $data['image_file'] = $this->input->post('image_file');
          //call function
          $this->M_foto_kegiatan->edit($data);
          //redirect to page
@@ -149,10 +112,11 @@ public function input() {
     }
 
     public function delete() {
-
-        if($this->input->post('image_id')!="") {
-            $this->M_foto_kegiatan->delete($this->input->post('image_id'));
-        }
+      unlink('./assets/foto_kegiatan/'.$this->input->post('image_file'));
+      $this->M_foto_kegiatan->delete($this->input->post('image_id'));
+        // if($this->input->post('image_id')!="") {
+        //     $this->M_foto_kegiatan->delete($this->input->post('image_id'));
+        // }
         redirect('Foto_Kegiatan');
 
     }

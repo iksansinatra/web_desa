@@ -35,12 +35,15 @@ class M_video extends CI_Model{
     }
 
 	public function edit($data) {
-        $this->db->update('table_video', $data, array('video_id'=>$data['video_id']));
+        $this->db->update('table_video', $data, array('video_id' => $data ['video_id']));
     }
 
     public function delete($id) {
-        $this->db->delete('table_video', array('video_id' => $id));
-    }
+    #delete data
+    $this->db->delete('table_video', array(
+      'video_id' => $id
+    ));
+  }
 
 }
 ?>

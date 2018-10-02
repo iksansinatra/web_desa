@@ -9,16 +9,16 @@ class M_visi extends CI_Model{
 
 
     public function input($data) {
-        $this->db->insert('visi', $data);
+        $this->db->insert('table_visi', $data);
     }
 
     public function record_count() {
-        return $this->db->count_all("visi");
+        return $this->db->count_all("table_visi");
     }
 
     public function fetch_countries($limit, $start) {
             $this->db->limit($limit, $start);
-            $query = $this->db->get("visi");
+            $query = $this->db->get("table_visi");
 
             if ($query->num_rows() > 0) {
                 foreach ($query->result() as $row) {
@@ -30,16 +30,16 @@ class M_visi extends CI_Model{
        }
 
 	public function tampil_data_visi() {
-        $query  = $this->db->query("select * from visi");
+        $query  = $this->db->query("select * from table_visi");
         return $query->result();
     }
 
 	public function edit($data) {
-        $this->db->update('visi', $data, array('id_visi'=>$data['id_visi']));
+        $this->db->update('table_visi', $data, array('visi_id'=>$data['visi_id']));
     }
 
     public function delete($id) {
-        $this->db->delete('visi', array('id_visi' => $id));
+        $this->db->delete('table_visi', array('visi_id' => $id));
     }
 
 }

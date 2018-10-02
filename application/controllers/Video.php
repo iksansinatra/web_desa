@@ -67,9 +67,10 @@ class Video extends CI_Controller {
     }
 
     public function edit() {
+      
         //get data
         $this->load->library('upload');
-		unlink('./assets/video/' . $this->input->post('video_file'));
+		// unlink('./assets/video/' . $this->input->post('video_file'));
     $nmfile                  = "vid-" . date('YmdHis');
     $config['upload_path']   = './assets/video/';
     $config['allowed_types'] = 'wmv|wav|mp4|3gp|flv';
@@ -87,6 +88,7 @@ class Video extends CI_Controller {
 
         if($_FILES['video']['name'])
          {
+          unlink('./assets/video/' . $this->input->post('video_file'));
              if ($this->upload->do_upload('video'))
              {
                  $gbr = $this->upload->data();
@@ -112,6 +114,7 @@ class Video extends CI_Controller {
            $data['video_id'] = $this->input->post('video_id');
            $data['video_name'] = $this->input->post('video_name');
            $data['video_desc'] = $this->input->post('video_desc');
+           $data['video_file'] = $this->input->post('video_file');
          //call function
          $this->M_video->edit($data);
          //redirect to page
@@ -120,15 +123,10 @@ class Video extends CI_Controller {
            redirect('Video'); //jika berhasil maka akan ditampilkan view vupload
     }
 
-    public function delete() {
-unlink('./assets/video/' . $this->input->post('video_file'));
+  public function delete() {
+    unlink('./assets/video/' . $this->input->post('video_file'));
     $this->M_video->delete($this->input->post('video_id'));
-    redirect('Video');
-        // if($this->input->post('video_id')!="") {
-            // $this->M_video->delete($this->input->post('video_id'));
-        // }
-        // redirect('Video');
-
-    }
+    redirect('video');
+  }
 }
 ?>

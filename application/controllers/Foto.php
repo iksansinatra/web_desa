@@ -63,6 +63,7 @@ class Foto extends CI_Controller {
 
     public function edit() {
         //get data
+      
         $this->load->library('upload');
         $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
         $config['upload_path'] = './assets/foto/'; //path folder
@@ -76,6 +77,7 @@ class Foto extends CI_Controller {
 
         if($_FILES['gambar']['name'])
          {
+          unlink('./assets/foto/'.$this->input->post('image_file'));
              if ($this->upload->do_upload('gambar'))
              {
                  $gbr = $this->upload->data();
@@ -101,6 +103,7 @@ class Foto extends CI_Controller {
            $data['image_id'] = $this->input->post('image_id');
            $data['image_name'] = $this->input->post('image_name');
            $data['image_desc'] = $this->input->post('image_desc');
+           $data['image_file'] = $this->input->post('image_file');
          //call function
          $this->M_foto->edit($data);
          //redirect to page
@@ -110,10 +113,8 @@ class Foto extends CI_Controller {
     }
 
     public function delete() {
-
-        if($this->input->post('image_id')!="") {
+      unlink('./assets/foto/'.$this->input->post('image_file'));
             $this->M_foto->delete($this->input->post('image_id'));
-        }
         redirect('Foto');
 
     }

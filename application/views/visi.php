@@ -1,10 +1,13 @@
   <div class="content-wrapper">
     <section class="content-header">
       <h1>
-      Visi dan Misi UMK
+      Visi & Misi Desa
       </h1>
       <br>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" title="Tambah"><i class="fa fa-plus"></i> Tambah</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" title="Tambah Visi & Misi"><i class="fa fa-plus"></i> Tambah</button>
+    <a href="<?php echo site_url('visi')?>" class="btn btn-white btn-success btn-bold tooltip-success" data-rel="tooltip" data-placement="top" title="Refresh Page">
+                          <i class="fa fa-refresh"></i>
+                        </a>
       <!-- Modal Insert-->
       <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -12,23 +15,26 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Tambah Visi Misi Baru</h4>
+                <h4 class="modal-title">Tambah Visi & Misi Desa</h4>
             </div>
             <div class="modal-body">
               <?php echo form_open_multipart("Visi/input");?>
                 <div class="box-body">
                   <div class="form-group">
-                    <label for="password">Visi</label>
-                      <input type="text" class="form-control" id="password" placeholder="Visi" name="visi" required="required">
+                    <label for="password">Tahun</label>
+                      <input type="number" class="form-control" min="2000" max="3000" id="sembarang" placeholder="Tahun" name="visi_tahun" required="required">
                   </div>
                   <div class="form-group">
-                    <label for="password">Misi</label>
-                      <input type="text" class="form-control" id="password" placeholder="Misi"  name="misi" required="required">
+                    <label for="password">Visi Desa</label>
+                      <input type="text" class="form-control" id="password" placeholder="Visi Desa" name="visi_visi" required="required">
                   </div>
-
+          <div class="form-group">
+                    <label for="password">Misi Desa</label>
+                      <textarea class="form-control ckeditor" id="ckeditor" placeholder="Misi Desa"  name="visi_misi" required="required"></textarea>
+                  </div>
                   <div class="form-group">
                     <label for="password">Gambar</label>
-                      <input type="file" class="form-control" id="password" placeholder="Gambar" name="gambar" >
+                    <input type="file" class="form-control" id="password" placeholder="Gambar" name="gambar">
                   </div>
                 </div><!-- /.box-body -->
                 <div class="box-footer">
@@ -45,17 +51,17 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Daftar Visi Misi</h3>
+              <h3 class="box-title">Visi & Misi Desa</h3>
             </div><!-- /.box-header -->
             <div class="box-body">
               <table class="table table-bordered table-striped" id="example1">
                 <thead>
                   <tr>
                     <th style="width: 10px">No</th>
-                    <th>Visi</th>
-                    <th>Misi</th>
-                    <th>Gambar</th>
-                    <th>Status</th>
+                    <th>Tahun</th>
+                    <th>Visi Desa</th>
+                    <th>Misi Desa</th>
+                    <th>Gambar</th>  
                     <th style="width: 120px">Aksi</th>
                   </tr>
                 </thead>
@@ -63,46 +69,68 @@
                 <?php
                   $no=1;
                   foreach ($visi as $key) {
-                    $id=$key->id_visi;
+                    $id=$key->visi_id;
 
                 ?>
                   <tr>
                     <td><?php echo $no; ?></td>
-                    <td><?php echo $key->visi;?></td>
-                    <td><?php echo $key->misi;?></td>
-                    <td><a href="../assets/visi/<?php echo $key->gambar;?>"><img src="<?php echo base_url()?>/assets/visi/<?php echo $key->gambar;?>" title="<?php echo $key->visi;?>" width="100" height="100"></a></td>
-                    <td><span class="label label-danger">Notification</span></td>
+                    <td><?php echo $key->visi_tahun;?></td>
+                    <td><?php echo $key->visi_visi;?></td>
+                    <td><?php echo $key->visi_misi;?></td>
+           <td><a href="" data-toggle="modal" data-target="#imageModal<?php echo $id;?>"><img src="<?php echo base_url()?>/assets/visi/<?php echo $key->visi_image;?>" width="100" height="100"></a></td>
                     <td>
-
-                      <button type="button" class="btn btn-xs btn-success" title="Edit Visi Misi" data-toggle="modal" data-target="#edit<?php echo $id;?>"><i class="fa fa-edit"></i></button>
-                      <button type="button" class="btn btn-xs btn-danger" title="Hapus Visi Misi" data-toggle="modal" data-target="#delete<?php echo $id;?>"><i class="fa fa-trash"></i></button>
-
+                      <button type="button" class="btn btn-xs btn-success" title="Edit Visi & Misi" data-toggle="modal" data-target="#edit<?php echo $id;?>"><i class="fa fa-edit"></i></button>
+                      <button type="button" class="btn btn-xs btn-danger" title="Hapus Visi & Misi" data-toggle="modal" data-target="#delete<?php echo $id;?>"><i class="fa fa-trash"></i></button>
                     </td>
                   </tr>
-
-                  <!-- Modal Update-->
+           <!-- Modal image-->
+                      <div class="modal fade" id="imageModal<?php echo $id;?>" role="dialog">
+                        <div class="modal-dialog">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"><b>Lihat Gambar</b></h4>
+                            </div>
+                            <div class="modal-body">
+                              <div class="box-body">
+                                 <center><img src="<?php echo base_url()?>assets/visi/<?php echo $key->visi_image;?>" height="300px" width="300px"></center>
+                              </div>
+                            </div>
+                             
+                          </div>
+                        </div>
+                      </div>
+            <!-- Modal Update-->
                   <div class="modal fade" id="edit<?php echo $id;?>" role="dialog">
                     <div class="modal-dialog" >
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Ubah Data Visi</h4>
+                          <h4 class="modal-title">Ubah Visi & Misi Desa</h4>
                         </div>
                         <div class="modal-body">
                           <div class="box-body">
                            <?php echo form_open_multipart("Visi/edit");?>
+                           <div class="form-group">
+                              <label for="password">Tahun</label>
+                                <input type="number" class="form-control" min="2000" max="3000" id="sembarang" placeholder="Tahun" value='<?php echo $key->visi_tahun; ?>' name="visi_tahun" required="required">
+                                <input type="hidden" class="form-control"   value='<?php echo $key->visi_id; ?>' name="visi_id" required="required" >
+                              <input type="hidden" class="form-control" value='<?php echo $key->visi_image; ?>' name="visi_image" required="required" readonly>
+                            </div>
                              <div class="form-group">
-                              <label for="password">Visi</label>
-                              <input type="hidden" class="form-control"   value='<?php echo $key->id_visi; ?>' name="id_visi" required="required" >
-                              <input type="text" class="form-control"  value='<?php echo $key->visi; ?>' name="visi" required="required">
+                              <label for="password">Visi Desa</label>
+                              <input type="text" class="form-control"  value='<?php echo $key->visi_visi; ?>' name="visi_visi" required="required">
                             </div>
                             <div class="form-group">
-                              <label for="password">Misi</label>
-                                <input type="text" class="form-control"  value='<?php echo $key->misi;?>' name="misi" required="required">
+                              <label for="password">Misi Desa</label>
+                                <textarea class="form-control ckeditor" id="ckeditor"  value='' name="visi_misi" required="required">
+                                  <?php echo $key->visi_misi;?>
+                                </textarea>
                             </div>
-                            <div class="form-group">
+              <div class="form-group">
                               <label for="password">Gambar</label>
-                                <input type="file" class="form-control"  value='<?php echo $key->gambar;?>' name="gambar" required="required">
+                                <input type="file" class="form-control" id="password" placeholder="Gambar"  name="gambar" >
                             </div>
                           </div><!-- /.box-body -->
                           <div class="box-footer">
@@ -119,21 +147,21 @@
                     <div class="modal-dialog">
                     <!-- Modal content-->
                       <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Hapus fakultas <?php echo $key->visi ?></h4>
-                        </div>
-                        <div class="modal-body">
-                          <div class="alert alert-danger">Apakah anda yakin ingin menghapus visi misi ini?</div>
-                        </div>
-                        <div class="modal-footer">
-
                         <?php echo form_open("Visi/delete");?>
-                          <input type="hidden" class="form-control" value="<?php echo $key->id_visi?>" name="id_visi" required="required">
-                          <button type="submit" class="btn btn-danger">&nbsp;Ya</button>
-                          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
-                        <?php echo form_close(); ?>
-                      </div>
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Hapus Visi & Misi Desa</h4>
+                            </div>
+                            <div class="modal-body">
+                              <div class="alert alert-danger">Apakah anda yakin ingin menghapus visi & misi tahun "<b><?php echo $key->visi_tahun?></b>" ?</div>
+                            </div>
+                            <div class="modal-footer">
+                              <input type="hidden" class="form-control" value="<?php echo $key->visi_id?>" name="visi_id" required="required">
+                              <input type="hidden" class="form-control" value="<?php echo $key->visi_image?>" name="visi_image" required="required">
+                              <button type="submit" class="btn btn-danger">Ya</button>
+                              <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
+                            </div>
+                            <?php echo form_close(); ?>
                       </div>
                     </div>
                   </div>

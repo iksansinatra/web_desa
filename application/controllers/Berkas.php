@@ -61,6 +61,7 @@ public function input() {
     }
 
     public function edit() {
+      
         //get data
         $this->load->library('upload');
         $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
@@ -75,6 +76,7 @@ public function input() {
 
         if($_FILES['gambar']['name'])
          {
+          unlink('./assets/berkas/'.$this->input->post('berkas_image'));
              if ($this->upload->do_upload('gambar'))
              {
                  $gbr = $this->upload->data();
@@ -93,6 +95,7 @@ public function input() {
            $data['berkas_id'] = $this->input->post('berkas_id');
            $data['berkas_name'] = $this->input->post('berkas_name');
            $data['berkas_desc'] = $this->input->post('berkas_desc');
+           $data['berkas_image'] = $this->input->post('berkas_image');
          //call function
          $this->M_berkas->edit($data);
          //redirect to page
@@ -103,9 +106,8 @@ public function input() {
 
     public function delete() {
 
-        if($this->input->post('berkas_id')!="") {
+            unlink('./assets/berkas/'.$this->input->post('berkas_image'));
             $this->M_berkas->delete($this->input->post('berkas_id'));
-        }
         redirect('Berkas');
 
     }

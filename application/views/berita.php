@@ -113,22 +113,23 @@
                   <div class="modal fade" id="delete<?php echo $id;?>" role="dialog">
                     <div class="modal-dialog">
                     <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Hapus Berita <?php echo $key->news_title ?></h4>
-                        </div>
-                        <div class="modal-body">
-                          <div class="alert alert-danger">Apakah anda yakin ingin menghapus Berita ini?</div>
-                        </div>
-                        <div class="modal-footer">
-                        <?php echo form_open("Berita/delete");?>
-                          <input type="hidden" class="form-control" value="<?php echo $key->news_id?>" name="news_id" required="required">
-                          <button type="submit" class="btn btn-danger">&nbsp;Ya</button>
-                          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
-                        <?php echo form_close(); ?>
-                      </div>
-                      </div>
+                    <div class="modal-content">
+                            <?php echo form_open("Berita/delete");?>
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Hapus Berita</h4>
+                            </div>
+                            <div class="modal-body">
+                              <div class="alert alert-danger">Apakah anda yakin ingin menghapus "<b><?php echo $key->news_title?></b>" ?</div>
+                            </div>
+                            <div class="modal-footer">
+                              <input type="hidden" class="form-control" value="<?php echo $key->news_id?>" name="news_id" required="required">
+                              <input type="hidden" class="form-control" value="<?php echo $key->news_image?>" name="news_image" required="required">
+                              <button type="submit" class="btn btn-danger">Ya</button>
+                              <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
+                            </div>
+                            <?php echo form_close(); ?>
+                          </div>
                     </div>
                   </div>
                   <!-- Modal Update-->
@@ -144,7 +145,8 @@
                            <?php echo form_open_multipart("Berita/edit");?>
                              <div class="form-group">
                               <label for="password">Nama Berita</label>
-                              <input type="hidden" class="form-control"  value='<?php echo $key->news_id; ?>' name="news_id" required="required" readonly>
+                              <input type="hidden" class="form-control"  value='<?php echo $key->news_id; ?>' name="news_id" required="required">
+                              <input type="hidden" class="form-control" value='<?php echo $key->news_image; ?>' name="news_image" required="required" readonly>
                                 <input type="text" class="form-control"  value='<?php echo $key->news_title; ?>' name="news_title" required="required">
                             </div>
                             <div class="form-group">

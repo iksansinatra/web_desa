@@ -22,25 +22,39 @@
       <!-- Konten -->
               <li class="treeview">
                 <a href="#">
-                  <i class="fa fa-dashboard"></i> <span>Profil Desa</span>
+                  <i class="fa fa-user "></i> <span>Profil Desa</span>
                   <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
                 </a>
                 <ul class="treeview-menu">
-                  <li class="active"><a href="<?php echo site_url('Berita')?>">
+                  <li class="active"><a href="<?php echo site_url('visi')?>">
                     <i class="fa fa-newspaper-o text-red"></i><span>Visi & Misi</span>
                   </a>
                 </li>
-                  <li class="active"><a href="<?php echo site_url('Beritakategori')?>">
-                    <i class="fa fa-newspaper-o text-green"></i><span>Sejarah Desa</span>
+                <li class="treeview">
+                <a href="#" >
+                    <i class="fa fa-history text-yellow"></i><span>Sejarah Desa</span>
+          <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                  </a>
+          <ul class="treeview-menu">
+                  <li class="active"><a href="<?php echo site_url('Sejarah_Desa')?>">
+                    <i class="fa fa-history text-red"></i><span>Sejarah Desa</span>
                   </a>
                 </li>
-                  <li><a href="<?php echo site_url('Perangkat')?>" >
+                  <li class="active"><a href="<?php echo site_url('Sejarah_Pemerintahan')?>">
+                    <i class="fa fa-history text-red"></i><span>Sejarah Pemerintahan</span>
+                  </a>
+                </li>
+        </ul>
+          </li>
+                  <li class="active"><a href="<?php echo site_url('Perangkat')?>" >
                     <i class="fa fa-book text-aqua"></i><span>Perangkat Desa</span>
                   </a>
                 </li>
-				<li><a href="<?php echo site_url('Fasilitas')?>" >
+				<li class="active"><a href="<?php echo site_url('Fasilitas')?>" >
                     <i class="fa fa-calendar text-yellow"></i><span>Fasilitas Umum</span>
                   </a></li>
 				<li class="treeview">
@@ -63,6 +77,23 @@
 				  </li>
                 </ul>
               </li>
+               <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-user "></i> <span>Demografi Desa</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li class="active"><a href="<?php echo site_url('Penduduk')?>">
+                    <i class="fa fa-newspaper-o text-red"></i><span>Jumlah Penduduk</span>
+                  </a>
+                </li>
+        <li class="active"><a href="<?php echo site_url('Fasilitas')?>" >
+                    <i class="fa fa-calendar text-yellow"></i><span>Keadaan Iklim & Topografi</span>
+                  </a></li>
+                </ul>
+              </li>
         <!-- Konten -->
 		<!-- Konten -->
               <li>
@@ -73,7 +104,7 @@
         <!-- Konten -->
 		<li>
           <a href="<?php echo site_url('Pariwisata');?>">
-            <i class="fa fa-home"></i> <span>Pariwisata Desa</span>
+            <i class="fa fa-"></i> <span>Pariwisata Desa</span>
           </a>
       </li>
 		<!-- Konten -->
@@ -124,20 +155,20 @@
           <!-- Konten -->
 
 
-          <li>
+<!--           <li>
           <a href="<?php echo site_url('Home');?>">
             <i class="fa fa-home"></i> <span>Peta Desa</span>
           </a>
-      </li>
+      </li> -->
 
             <li>
-          <a href="<?php echo site_url('Home');?>">
+          <a href="<?php echo site_url('kontak');?>">
             <i class="fa fa-home"></i> <span>Kontak</span>
           </a>
       </li>
 	<li class="">
       <a href="<?php echo site_url('user')?>">
-      <i class="menu-icon fa fa-user"></i>
+      <i class="menu-icon fa fa-users"></i>
       <span class="menu-text"> User </span>
       </a>
       <b class="arrow"></b>

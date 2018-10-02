@@ -75,6 +75,7 @@ public function input() {
 
         if($_FILES['gambar']['name'])
          {
+          unlink('./assets/potensi/'.$this->input->post('potensi_image'));
              if ($this->upload->do_upload('gambar'))
              {
                  $gbr = $this->upload->data();
@@ -93,6 +94,7 @@ public function input() {
            $data['potensi_id'] = $this->input->post('potensi_id');
            $data['potensi_name'] = $this->input->post('potensi_name');
            $data['potensi_desc'] = $this->input->post('potensi_desc');
+           $data['potensi_image'] = $this->input->post('potensi_image');
          //call function
          $this->M_potensi->edit($data);
          //redirect to page
@@ -102,10 +104,8 @@ public function input() {
     }
 
     public function delete() {
-
-        if($this->input->post('potensi_id')!="") {
+      unlink('./assets/potensi/'.$this->input->post('potensi_image'));
             $this->M_potensi->delete($this->input->post('potensi_id'));
-        }
         redirect('Potensi');
 
     }

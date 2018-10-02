@@ -1,7 +1,7 @@
   <div class="content-wrapper">
     <section class="content-header">
       <h1>
-      Anggaran Desa Laywo Jaya
+      Belanja Desa Laywo Jaya
       </h1>
       <br>
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" title="Tambah"><i class="fa fa-plus"></i> Tambah</button>
@@ -70,7 +70,7 @@
                     <th>Pembinaan Kemasyarakatan</th>
                     <th>Pemberdayaan Masyarakat</th>
                     <th>Belanja Tak Terduga</th>
-                    <th style="width: 120px">Total Belanja</th>
+                    <th style="width: 150px">Total Belanja</th>
                     <th style="width: 50px">Aksi</th>
                   </tr>
                 </thead>

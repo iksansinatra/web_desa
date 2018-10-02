@@ -113,6 +113,7 @@
                               <label for="password">Judul Foto</label>
                               <input type="text" class="form-control"  value='<?php echo $key->image_name; ?>' name="image_name" required="required">
                               <input type="hidden" class="form-control"   value='<?php echo $key->image_id; ?>' name="image_id" required="required" >
+                              <input type="hidden" class="form-control" value='<?php echo $key->image_file; ?>' name="image_file" required="required" readonly>
                             </div>
                             <div class="form-group">
                               <label for="password">Deskripsi Foto</label>
@@ -139,20 +140,21 @@
                     <div class="modal-dialog">
                     <!-- Modal content-->
                       <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Hapus foto <?php echo $key->image_name ?></h4>
-                        </div>
-                        <div class="modal-body">
-                          <div class="alert alert-danger">Apakah anda yakin ingin menghapus foto ini?</div>
-                        </div>
-                        <div class="modal-footer">
                         <?php echo form_open("Foto/delete");?>
-                          <input type="hidden" class="form-control" value="<?php echo $key->image_id?>" name="image_id" required="required">
-                          <button type="submit" class="btn btn-danger">&nbsp;Ya</button>
-                          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
-                        <?php echo form_close(); ?>
-                      </div>
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Hapus Foto</h4>
+                            </div>
+                            <div class="modal-body">
+                              <div class="alert alert-danger">Apakah anda yakin ingin menghapus "<b><?php echo $key->image_name?></b>" ?</div>
+                            </div>
+                            <div class="modal-footer">
+                              <input type="hidden" class="form-control" value="<?php echo $key->image_id?>" name="image_id" required="required">
+                              <input type="hidden" class="form-control" value="<?php echo $key->image_file?>" name="image_file" required="required">
+                              <button type="submit" class="btn btn-danger">Ya</button>
+                              <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
+                            </div>
+                            <?php echo form_close(); ?>
                       </div>
                     </div>
                   </div>

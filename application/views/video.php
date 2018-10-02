@@ -86,7 +86,7 @@
                           <!-- Modal content-->
                           <div class="modal-content">
                             <video width="598" height="400" controls>
-                              <source src="<?php echo base_url()?>assets/video/<?php echo $key->video_file;?>" type="video/mp4/3gp">
+                              <source src="<?php echo base_url()?>assets/video/<?php echo $key->video_file;?>" type="video/mp4">
                             </video>
                           </div>
                         </div>
@@ -113,10 +113,11 @@
                                   <?php echo $key->video_desc;?>
                                 </textarea>
                             </div>
-							<div class="form-group">
-                              <label for="password">File</label>
-                                <input type="file" class="form-control" id="password" placeholder="Video"  name="video" >
-                            </div>
+                            <div class="form-group">
+                                  <label>File</label>
+                                  <input type="file" class="form-control" name="video" placeholder="Video">
+                                  <input type="hidden" class="form-control" name="video_file" placeholder="Video" value='<?php echo $key->video_file; ?>'>
+                                </div>
                           </div><!-- /.box-body -->
                           <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Ubah</button>
@@ -128,27 +129,28 @@
                   </div>
 
                   <!-- Modal Delete-->
-                  <div class="modal fade" id="delete<?php echo $id;?>" role="dialog">
-                    <div class="modal-dialog">
-                    <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Hapus Video <?php echo $key->video_name ?></h4>
+                      <div class="modal fade" id="delete<?php echo $id;?>" role="dialog">
+                        <div class="modal-dialog">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <?php echo form_open("Video/delete");?>
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Hapus Video</h4>
+                            </div>
+                            <div class="modal-body">
+                              <div class="alert alert-danger">Apakah anda yakin ingin menghapus "<b><?php echo $key->video_name?></b>" ?</div>
+                            </div>
+                            <div class="modal-footer">
+                              <input type="hidden" class="form-control" value="<?php echo $key->video_id?>" name="video_id" required="required">
+                              <input type="hidden" class="form-control" value="<?php echo $key->video_file?>" name="video_file" required="required">
+                              <button type="submit" class="btn btn-danger">Ya</button>
+                              <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
+                            </div>
+                            <?php echo form_close(); ?>
+                          </div>
                         </div>
-                        <div class="modal-body">
-                          <div class="alert alert-danger">Apakah anda yakin ingin menghapus video ini?</div>
-                        </div>
-                        <div class="modal-footer">
-                        <?php echo form_open("Video/delete");?>
-                          <input type="hidden" class="form-control" value="<?php echo $key->video_id?>" name="video_id" required="required">
-                          <button type="submit" class="btn btn-danger">&nbsp;Ya</button>
-                          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>
-                        <?php echo form_close(); ?>
                       </div>
-                      </div>
-                    </div>
-                  </div>
                 <?php
                   $no++;
                   }
