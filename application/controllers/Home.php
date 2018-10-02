@@ -114,6 +114,13 @@ class Home extends CI_Controller {
         }
     }
 
+    public function index1(){
+
+
+            $this->load->view("frontend/index.php");
+
+    }
+
     public function login(){
         if($_POST) {
             $data['user_name'] = $this->input->post('username');
