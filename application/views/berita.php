@@ -38,7 +38,7 @@
                   </div>
                   <div class="form-group">
                     <label for="password">Keterangan Berita</label>
-                      <textarea  class="form-control ckeditor" id="ckedtor" placeholder="Keterangan" name="news_content" required="required"></textarea>
+                      <textarea  class="form-control" id="editor1" placeholder="Keterangan" name="news_content" required="required"></textarea>
                   </div>
                 </div><!-- /.box-body -->
                 <div class="box-footer">
@@ -163,7 +163,7 @@
                             </div>
                             <div class="form-group">
                               <label for="password">Keterangan Berita</label>
-                                <textarea class="form-control ckeditor" id="ckeditor"  value='' style="text-align:justify" name="news_content" required="required">
+                                <textarea class="form-control" id="editor2" name="news_content" required="required">
                                   <?php echo $key->news_content;?>
                                 </textarea>
                             </div>
