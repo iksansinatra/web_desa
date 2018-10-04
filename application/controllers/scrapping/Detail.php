@@ -38,7 +38,7 @@ function hapus($text){
 	}
 	return trim($text);
 }
-      $url = "http://umkendari.ac.id/berita.php?baca=293";
+      $url = "";
       $base = file_get_contents($url);
 
       echo $base;

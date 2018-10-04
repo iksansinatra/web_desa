@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Okt 2018 pada 18.18
+-- Generation Time: 04 Okt 2018 pada 18.11
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -36,13 +36,6 @@ CREATE TABLE IF NOT EXISTS `table_agenda` (
   `agenda_organizer` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `table_agenda`
---
-
-INSERT INTO `table_agenda` (`agenda_id`, `agenda_name`, `agenda_desc`, `agenda_date`, `agenda_time`, `agenda_place`, `agenda_organizer`) VALUES
-(2, 'dgf', 'hgh', '0064-03-19', '07:10:00', '25gtrf', 'dhfjgj');
-
 -- --------------------------------------------------------
 
 --
@@ -58,14 +51,14 @@ CREATE TABLE IF NOT EXISTS `table_belanja` (
   `belanja_pemberdayaan` double NOT NULL,
   `belanja_lainlain` double NOT NULL,
   `belanja_total` double NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_belanja`
 --
 
 INSERT INTO `table_belanja` (`belanja_id`, `belanja_tahun`, `belanja_pemerintahan`, `belanja_pembangunan`, `belanja_pembinaan`, `belanja_pemberdayaan`, `belanja_lainlain`, `belanja_total`) VALUES
-(12, 2021, 120000000, 500000000, 300000000, 100000000, 50000000, 1070000000);
+(13, 2017, 280988000, 633187000, 31500000, 82500000, 0, 1028175000);
 
 -- --------------------------------------------------------
 
@@ -79,14 +72,6 @@ CREATE TABLE IF NOT EXISTS `table_berkas` (
   `berkas_desc` text NOT NULL,
   `berkas_image` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `table_berkas`
---
-
-INSERT INTO `table_berkas` (`berkas_id`, `berkas_name`, `berkas_desc`, `berkas_image`) VALUES
-(2, 'iksan', '<p>Syarat</p>\r\n\r\n<p>1. Iksan</p>\r\n\r\n<p>2. Amsyar</p>\r\n\r\n<p>3. Adriyan</p>\r\n', 'file_1538241699.JPG'),
-(5, 'bfnb', '<p>bfb</p>\r\n', 'file_1538242255.JPG');
 
 -- --------------------------------------------------------
 
@@ -113,15 +98,17 @@ CREATE TABLE IF NOT EXISTS `table_fasilitas` (
   `fasilitas_name` varchar(200) NOT NULL,
   `fasilitas_desc` text NOT NULL,
   `fasilitas_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_fasilitas`
 --
 
 INSERT INTO `table_fasilitas` (`fasilitas_id`, `fasilitas_name`, `fasilitas_desc`, `fasilitas_image`) VALUES
-(1, 'fsagdhg', '<p>wadaw</p>\r\n', 'file_1538247107.JPG'),
-(3, 'iksan', '<p>iksan</p>\r\n', 'file_1538247163.jpg');
+(4, 'Pengadaan TV Kabel', '<p>Pengadaan TV Kabel Desa Laywo Jaya dengan menggunakan anggaran Badan Usaha Milik Desa</p>\r\n', 'file_1538666256.jpeg'),
+(5, 'Jalan Desa', '<p>Jalan Desa Laywo Jaya yang belum diaspal</p>\r\n', 'file_1538666354.jpeg'),
+(6, 'Pengadaan Alat Pertanian ', '<p>Pengadaan alat pertanian Desa Laywo Jaya</p>\r\n', 'file_1538666516.jpeg'),
+(7, 'Bangunan Desa', '', 'file_1538668613.jpeg');
 
 -- --------------------------------------------------------
 
@@ -154,14 +141,15 @@ CREATE TABLE IF NOT EXISTS `table_image` (
   `image_name` varchar(200) NOT NULL,
   `image_desc` text NOT NULL,
   `image_file` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_image`
 --
 
 INSERT INTO `table_image` (`image_id`, `image_name`, `image_desc`, `image_file`) VALUES
-(17, 'yuyiy', '                                  yukuk                                ', 'file_1538241258.JPG');
+(18, 'Penimbunan', 'Penimbunan lahan desa untuk mendirikan bangunan', 'file_1538669068.jpeg'),
+(19, 'Drainase', 'Drainase', 'file_1538669116.jpeg');
 
 -- --------------------------------------------------------
 
@@ -226,14 +214,19 @@ CREATE TABLE IF NOT EXISTS `table_kegiatan` (
   `image_name` varchar(200) NOT NULL,
   `image_desc` text NOT NULL,
   `image_file` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_kegiatan`
 --
 
 INSERT INTO `table_kegiatan` (`image_id`, `image_name`, `image_desc`, `image_file`) VALUES
-(6, 'gb', '                                                                    gvb                                                                ', 'file_1538239305.JPG');
+(7, 'Rapat Koordinasi', 'Kegiatan rapat koordinasi pembinaan dan pengawasan dana desa Provinsi Sulawesi Tenggara tahun 2017 yang dihadiri oleh Kepala Desa Laywo Jaya                                ', 'file_1538666992.jpeg'),
+(8, 'Lomba Desa', 'Perwakilan lomba desa kecamatan wawonii timur                      ', 'file_1538667788.jpeg'),
+(9, 'Rapat Desa', 'Kegiatan rapat desa', 'file_1538667364.jpeg'),
+(10, 'Kegiatan PKK', 'Posyandu Desa Laywo Jaya', 'file_1538667850.jpeg'),
+(11, 'Pelayanan', 'Pelayanan terhadap masyarakat', 'file_1538669249.jpeg'),
+(12, 'Kegiatan PKK', 'Pembuatan baju untuk Majelis Taklim', 'file_1538669306.jpeg');
 
 -- --------------------------------------------------------
 
@@ -282,13 +275,6 @@ CREATE TABLE IF NOT EXISTS `table_news` (
   `news_date` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `table_news`
---
-
-INSERT INTO `table_news` (`news_id`, `news_title`, `news_content`, `news_image`, `news_author`, `news_date`) VALUES
-(6, 'iksan', '<p>iksan</p>\r\n', 'file_1538243920.JPG', 'iksan', '2018-05-01');
-
 -- --------------------------------------------------------
 
 --
@@ -314,13 +300,6 @@ CREATE TABLE IF NOT EXISTS `table_pariwisata` (
   `pariwisata_image` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `table_pariwisata`
---
-
-INSERT INTO `table_pariwisata` (`pariwisata_id`, `pariwisata_name`, `pariwisata_desc`, `pariwisata_image`) VALUES
-(1, 'iksan', '<p><!--?php echo $key->image_desc;?-->yoy</p>\r\n', 'file_1538245073.JPG');
-
 -- --------------------------------------------------------
 
 --
@@ -335,14 +314,14 @@ CREATE TABLE IF NOT EXISTS `table_pendapatan` (
   `pendapatan_add` double NOT NULL,
   `pendapatan_bk` double NOT NULL,
   `pendapatan_total` double NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_pendapatan`
 --
 
 INSERT INTO `table_pendapatan` (`pendapatan_id`, `pendapatan_tahun`, `pendapatan_pad`, `pendapatan_dd`, `pendapatan_add`, `pendapatan_bk`, `pendapatan_total`) VALUES
-(2, 2016, 120000000, 1000000000, 300000000, 350000000, 1770000000);
+(3, 2017, 0, 676687000, 351488000, 0, 1028175000);
 
 -- --------------------------------------------------------
 
@@ -358,14 +337,14 @@ CREATE TABLE IF NOT EXISTS `table_perangkat` (
   `perangkat_date` date NOT NULL,
   `perangkat_sk` varchar(200) NOT NULL,
   `perangkat_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_perangkat`
 --
 
 INSERT INTO `table_perangkat` (`perangkat_id`, `perangkat_name`, `perangkat_text`, `perangkat_place`, `perangkat_date`, `perangkat_sk`, `perangkat_image`) VALUES
-(19, 'Iksan', 'Kepala Desa', 'Raha', '1996-03-31', 'nk/20/123', 'file_1538268378.jpg');
+(20, 'PIRDAUS', 'Kepala Desa', 'Munse', '1972-11-20', '05 Tahun 2005 Tahun 2018', 'file_1538667612.jpeg');
 
 -- --------------------------------------------------------
 
@@ -378,14 +357,7 @@ CREATE TABLE IF NOT EXISTS `table_potency` (
   `potensi_name` varchar(200) NOT NULL,
   `potensi_desc` text NOT NULL,
   `potensi_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `table_potency`
---
-
-INSERT INTO `table_potency` (`potensi_id`, `potensi_name`, `potensi_desc`, `potensi_image`) VALUES
-(7, 'greg', '<p>gth</p>\r\n', 'file_1538247351.jpg');
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -487,14 +459,6 @@ CREATE TABLE IF NOT EXISTS `table_video` (
   `video_file` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `table_video`
---
-
-INSERT INTO `table_video` (`video_id`, `video_name`, `video_desc`, `video_file`) VALUES
-(13, 'gdh', '                                                                                                                                        bvehbgf                                                                                                                                ', 'vid-20180929181823.MP4'),
-(14, 'indra', 'BABI', 'vid-20180930193731.MP4');
-
 -- --------------------------------------------------------
 
 --
@@ -507,14 +471,14 @@ CREATE TABLE IF NOT EXISTS `table_visi` (
   `visi_visi` text NOT NULL,
   `visi_misi` text NOT NULL,
   `visi_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_visi`
 --
 
 INSERT INTO `table_visi` (`visi_id`, `visi_tahun`, `visi_visi`, `visi_misi`, `visi_image`) VALUES
-(2, 2008, 'mantap', '<p>ngeri</p>\r\n', 'file_1538318092.JPG');
+(4, 2015, '“Terwujudnya Masyarakat Desa Laywo Jaya  Yang Berakhlak Mulia, Sehat, Cerdas dan Sejahtera”  ', '<ol>\r\n	<li><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Penempatan agama sebagai sumber motivasi dan inspirasi</span></span></span></span></li>\r\n	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Menciptakan rasa aman dan tentram dalam suasana kehidupan masyarakat desa yang demokratis dan agamis</span></span></span></span></li>\r\n	<li><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Meningkatkan profesionalisme perangkat desa sebagai pelayan masyarakat</span></span></span></span></li>\r\n	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Menciptakan pemerintahan yang baik (<em>good goverment) </em>berdasarkan demokratisasi, transparansi yang efektif dan efisien.</span></span></span></span></li>\r\n	<li><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Meningkatkan pemberdayaan masyarakat dari kekuatan ekonomi dan sosial budaya.</span></span></span></span></li>\r\n	<li><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Menghidupkan kegiatan-kegiatan kepemudaan dan organisasi kepemudaan</span></span></span></span></li>\r\n	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Membangun dan meningkatkan hasil pertanian dengan penataan jalan usaha tani, pemupukan, pengendalian gulma dan bantuan alat-alat pertanian</span></span></span></span></li>\r\n</ol>\r\n', 'file_1538668887.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -689,7 +653,7 @@ ALTER TABLE `table_agenda`
 -- AUTO_INCREMENT for table `table_belanja`
 --
 ALTER TABLE `table_belanja`
-  MODIFY `belanja_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `belanja_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `table_berkas`
 --
@@ -704,7 +668,7 @@ ALTER TABLE `table_desa`
 -- AUTO_INCREMENT for table `table_fasilitas`
 --
 ALTER TABLE `table_fasilitas`
-  MODIFY `fasilitas_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `fasilitas_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `table_groups`
 --
@@ -714,7 +678,7 @@ ALTER TABLE `table_groups`
 -- AUTO_INCREMENT for table `table_image`
 --
 ALTER TABLE `table_image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `table_job`
 --
@@ -734,7 +698,7 @@ ALTER TABLE `table_jobtips`
 -- AUTO_INCREMENT for table `table_kegiatan`
 --
 ALTER TABLE `table_kegiatan`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `table_kontak`
 --
@@ -764,17 +728,17 @@ ALTER TABLE `table_pariwisata`
 -- AUTO_INCREMENT for table `table_pendapatan`
 --
 ALTER TABLE `table_pendapatan`
-  MODIFY `pendapatan_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `pendapatan_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `table_perangkat`
 --
 ALTER TABLE `table_perangkat`
-  MODIFY `perangkat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+  MODIFY `perangkat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `table_potency`
 --
 ALTER TABLE `table_potency`
-  MODIFY `potensi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `potensi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `table_suggestion`
 --
@@ -804,7 +768,7 @@ ALTER TABLE `table_video`
 -- AUTO_INCREMENT for table `table_visi`
 --
 ALTER TABLE `table_visi`
-  MODIFY `visi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `visi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

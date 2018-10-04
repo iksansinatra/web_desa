@@ -37,7 +37,7 @@
                       <input type="date" class="form-control" id="password" placeholder="Tanggal Lahir"  name="perangkat_date" required="required">
                   </div>
                   <div class="form-group">
-                    <label for="password">SK Perangkat</label>
+                    <label for="password">SK Pengangkatan</label>
                       <input type="text" class="form-control" id="password" placeholder="SK Perangkat"  name="perangkat_sk" required="required">
                   </div>
                   <div class="form-group">
@@ -71,7 +71,7 @@
                     <th>Jabatan</th>
                     <th>Tempat Lahir</th>
           <th>Tanggal Lahir</th>
-                    <th>SK Perangkat</th>
+                    <th>SK Pengangkatan</th>
                     <th>Foto</th>
 
                     <th style="width: 50px">Aksi</th>
@@ -145,7 +145,7 @@
                                 <input type="date" class="form-control" id="password" placeholder="Tanggal Lahir" value='<?php echo $key->perangkat_date; ?>' name="perangkat_date" required="required" >
                             </div>
                             <div class="form-group">
-                              <label for="password">SK Perangkat</label>
+                              <label for="password">SK Pengangkatan</label>
                                 <input type="text" class="form-control" id="password" placeholder="SK Perangkat" value='<?php echo $key->perangkat_sk; ?>'  name="perangkat_sk" required="required">
                             </div>
                             <div class="form-group">
