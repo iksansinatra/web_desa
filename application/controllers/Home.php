@@ -4,10 +4,8 @@ class Home extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model("M_login");
-        $this->load->model("M_widget");
         $this->load->model("M_gambar");
         $this->load->model("M_berita");
-        $this->load->model("M_galeri");
         $this->load->model("M_perangkat");
 		$this->load->model("M_foto");
 		$this->load->model("M_foto_kegiatan");
@@ -52,46 +50,46 @@ class Home extends CI_Controller {
     }
 
 */
-    public function berita(){
+    // public function berita(){
 
-      $data['berita']=$this->M_notif->tampil_data_penerima();
-      $this->load->view("berita",$data);
-    }
+    //   $data['berita']=$this->M_notif->tampil_data_penerima();
+    //   $this->load->view("berita",$data);
+    // }
 
-    public function pengumuman(){
+    // public function pengumuman(){
 
-      $data['pengumuman']=$this->M_pengumuman->tampil_data_pengumuman();
-      $this->load->view("pengumuman1",$data);
-    }
+    //   $data['pengumuman']=$this->M_pengumuman->tampil_data_pengumuman();
+    //   $this->load->view("pengumuman1",$data);
+    // }
 
-    public function agenda(){
+    // public function agenda(){
 
-      $data['agenda']=$this->M_agenda->tampil_data_agenda();
-      $this->load->view("agenda1",$data);
-    }
+    //   $data['agenda']=$this->M_agenda->tampil_data_agenda();
+    //   $this->load->view("agenda1",$data);
+    // }
 
-    public function agenda1(){
-      $id=$this->input->get('id');
-      $data['agenda']=$this->M_agenda->tampil_data_agenda1($id);
-      $this->load->view("beranda3",$data);
-    }
+    // public function agenda1(){
+    //   $id=$this->input->get('id');
+    //   $data['agenda']=$this->M_agenda->tampil_data_agenda1($id);
+    //   $this->load->view("beranda3",$data);
+    // }
 
-    public function berita1(){
-      $id=$this->input->get('id');
-      $data['berita']=$this->M_notif->tampil_data_penerima1($id);
-      $this->load->view("beranda1",$data);
-    }
+    // public function berita1(){
+    //   $id=$this->input->get('id');
+    //   $data['berita']=$this->M_notif->tampil_data_penerima1($id);
+    //   $this->load->view("beranda1",$data);
+    // }
 
-    public function pengumuman1(){
-      $id=$this->input->get('id');
-      $data['pengumuman']=$this->M_pengumuman->tampil_data_pengumuman1($id);
-      $this->load->view("beranda2",$data);
-    }
+    // public function pengumuman1(){
+    //   $id=$this->input->get('id');
+    //   $data['pengumuman']=$this->M_pengumuman->tampil_data_pengumuman1($id);
+    //   $this->load->view("beranda2",$data);
+    // }
 
     public function index(){
         if(!($this->session->userdata('userid'))){
             $this->load->view("login_page");
-        }else{
+        }else {
             /*
             $data['widget_hari_ini']=$this->m_widget->widget_hari_ini();
             $data['widget_bulan_ini']=$this->m_widget->widget_bulan_ini();
@@ -107,8 +105,10 @@ class Home extends CI_Controller {
             $data['telnet_counter']=$this->m_widget->telnet_counter();
             $data['http_counter']=$this->m_widget->http_counter();
             */
+            $data['userid']=$this->session->userdata('group_id');
+
             $this->load->view("attribute/header");
-            $this->load->view("attribute/menus");
+            $this->load->view("attribute/menus",$data);
             $this->load->view("attribute/content");
             $this->load->view("attribute/footer");
         }
@@ -125,12 +125,14 @@ class Home extends CI_Controller {
         if($_POST) {
             $data['user_name'] = $this->input->post('username');
             $data['user_password'] = md5($this->input->post('password'));
+            $data['group_id'] = $this->input->post('group_id');
             $result = $this->M_login->login($data);
 
           			if($result) {
                             $data = array(
                                 'userid' => $result->user_id,
                                 'user_name' => $result->user_name,
+                                'group_id' => $result->group_id,
                             );
 
                   				$this->session->set_userdata($data);

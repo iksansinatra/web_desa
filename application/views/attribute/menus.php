@@ -12,8 +12,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU</li>
 
-
-        <li>
+<li>
           <a href="<?php echo site_url('Home');?>">
             <i class="fa fa-home"></i> <span>Beranda</span>
           </a>
@@ -54,17 +53,17 @@
                     <i class="fa fa-book text-aqua"></i><span>Perangkat Desa</span>
                   </a>
                 </li>
-				<li class="active"><a href="<?php echo site_url('Fasilitas')?>" >
+        <li class="active"><a href="<?php echo site_url('Fasilitas')?>" >
                     <i class="fa fa-calendar text-yellow"></i><span>Fasilitas Umum</span>
                   </a></li>
-				<li class="treeview">
-				<a href="#" >
+        <li class="treeview">
+        <a href="#" >
                     <i class="fa fa-money text-yellow"></i><span>Anggaran desa</span>
-					<span class="pull-right-container">
+          <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
                   </a>
-				  <ul class="treeview-menu">
+          <ul class="treeview-menu">
                   <li class="active"><a href="<?php echo site_url('Pendapatan')?>">
                     <i class="fa fa-money text-green"></i><span>Pendapatan</span>
                   </a>
@@ -73,8 +72,8 @@
                     <i class="fa fa-money text-green"></i><span>Belanja</span>
                   </a>
                 </li>
-				</ul>
-				  </li>
+        </ul>
+          </li>
                 </ul>
               </li>
                <li class="treeview">
@@ -95,19 +94,19 @@
                 </ul>
               </li>
         <!-- Konten -->
-		<!-- Konten -->
+    <!-- Konten -->
               <li>
                 <a href="<?php echo site_url('Potensi');?>">
                   <i class="fa fa-dashboard"></i> <span>Potensi Desa</span>
                 </a>
               </li>
         <!-- Konten -->
-		<li>
+    <li>
           <a href="<?php echo site_url('Pariwisata');?>">
             <i class="fa fa-"></i> <span>Pariwisata Desa</span>
           </a>
       </li>
-		<!-- Konten -->
+    <!-- Konten -->
               <li class="treeview">
                 <a href="#">
                   <i class="fa fa-dashboard"></i> <span>Informasi</span>
@@ -128,9 +127,9 @@
                   </a>
                 </li>
                 </ul>
-              </l	i>
+              </l i>
         <!-- Konten -->
-		<!-- Konten -->
+    <!-- Konten -->
                 <li class=" treeview">
                   <a href="#">
                     <i class="fa fa-building"></i> <span>Galeri</span>
@@ -166,15 +165,13 @@
             <i class="fa fa-home"></i> <span>Kontak</span>
           </a>
       </li>
-	<li class="">
+  <li class="">
       <a href="<?php echo site_url('user')?>">
       <i class="menu-icon fa fa-users"></i>
       <span class="menu-text"> User </span>
       </a>
       <b class="arrow"></b>
     </li>
-
-
       </ul>
     </section>
     <!-- /.sidebar -->

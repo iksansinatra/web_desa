@@ -5,6 +5,10 @@
       </h1>
       <br>
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" title="Tambah Saran"><i class="fa fa-plus"></i> Tambah</button>
+      <a href="<?php echo site_url('user')?>" class="btn btn-white btn-success btn-bold tooltip-success" data-rel="tooltip" data-placement="top" title="Refresh Page">
+                          <i class="fa fa-refresh"></i>
+                        </a>
+    
       <!-- Modal Insert-->
       <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -29,39 +33,6 @@
                                     <label>Nama Lengkap</label>
                                     <input type="text" class="form-control" name="user_fullname" placeholder="Nama Lengkap" required="required">
                                   </div>
-                  <!--div class="form-group">
-                    <label for="password">User IP Address</label>
-                      <input type="text" class="form-control" id="password" placeholder="IP Address" name="user_ipaddress" required="required">
-                  </div>
-                  <div class="form-group">
-                    <label for="password">Salt</label>
-                      <input type="text" class="form-control" id="password" placeholder="Salt" name="user_salt" required="required">
-                  </div>
-                  <div class="form-group">
-                    <label for="password">Email</label>
-                      <input type="email" class="form-control" id="password" placeholder="Email" name="user_email" required="required">
-                  </div>
-
-                  <div class="form-group">
-                      <label for="password">Waktu Dibuat</label>
-                    <div class="input-append date form_datetime">
-                        <input type="text" value="" class="form-control" name="user_created" >
-                        <span class="add-on"><i class="icon-calendar"></i></span>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                      <label for="password">Login Terakhir</label>
-                    <div class="input-append date form_datetime">
-                        <input type="text" value="" class="form-control" name="user_lastlogin" >
-                        <span class="add-on"><i class="icon-calendar"></i></span>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="password">Active</label>
-                      <input type="text" class="form-control" id="password" placeholder="Maks 5 karakter" name="username_active" required="required">
-                  </div-->
                   <div class="form-group">
                       <label for="password">Kategori</label>
                     <select class="form-control" name="group_id" required="required">
@@ -126,6 +97,80 @@
                       <button type="button" class="btn btn-xs btn-danger" title="Hapus User" data-toggle="modal" data-target="#delete<?php echo $id;?>"><i class="fa fa-trash"></i></button>
                     </td>
                   </tr>
+                   <!-- Modal Edit-->
+                      <div class="modal fade" id="edit<?php echo $id?>" role="dialog">
+                        <div class="modal-dialog">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"><b>Ubah Data User</b></h4>
+                            </div>
+                            <div class="modal-body">
+                              <?php echo form_open("User/edit");?>
+                              <div class="box-body">
+                                <div class="nav-tabs-custom">
+                                  <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#tab_1<?php echo $id?>" data-toggle="tab">User Info</a></li>
+                                    <li><a href="#tab_2<?php echo $id?>" data-toggle="tab">Ganti Password</a></li>
+                                  </ul>
+                                  <div class="tab-content">
+                                    <div class="tab-pane active" id="tab_1<?php echo $id?>">
+                                      <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control"  value='<?php echo $key->user_name; ?>' name="user_name" required="required" placeholder="Username">
+                                        <input type="hidden" class="form-control"  value='<?php echo $key->user_id; ?>' name="user_id" required="required" readonly>
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Fullname</label>
+                                        <input type="text" class="form-control"  value='<?php echo $key->user_fullname;?>' name="user_fullname" placeholder="Nama Lengkap" required="required">
+                                      </div>
+                                      <div class="form-group">
+                                <label for="password">Kategori</label>
+                              <select class="form-control" name="group_id" required="required">
+                                  <option>--Pilih Kategori--</option>
+                                  <?php foreach ($kategori as $key1): ?>
+                                  <option value="<?php echo $key1->group_id?>"
+                                  <?php
+                                      if($id1==$key1->group_id){
+                                        echo "selected";
+                                      }
+                                  ?> ><?php echo $key1->group_name?></option>
+                                <?php endforeach ?>
+                              </select>
+                            </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="tab_2<?php echo $id?>">
+                                      <div class="form-group">
+                                        <label>Password Lama</label>
+                                        <input type="password" class="form-control"  name="old_password" placeholder="Old Password">
+                                        <input type="hidden" class="form-control"  name="user_password" value="<?php echo $key->user_password?>">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Password Baru</label>
+                                        <input type="password" class="form-control"  name="new_password" placeholder="New Password">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Konfirmasi Password Baru</label>
+                                        <input type="password" class="form-control"  name="confirm_password" placeholder="Confirm New Password">
+                                      </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                  </div>
+                                  <!-- /.tab-content -->
+                                </div>
+                              </div>
+                              <!-- /.box-body -->
+                              <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Ubah</button>
+                              </div>
+                              <!-- /.box-footer -->
+                              <?php echo form_close(); ?>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                   <!-- Modal Update-->
                   <div class="modal fade" id="edit<?php echo $id;?>" role="dialog">
                     <div class="modal-dialog" >
@@ -150,50 +195,6 @@
                                         <label>Fullname</label>
                                         <input type="text" class="form-control"  value='<?php echo $key->user_fullname;?>' name="user_fullname" placeholder="Nama Lengkap" required="required">
                                       </div>
-                            <!--div class="form-group">
-                              <label for="password">User IP Address</label>
-                                <input type="text" class="form-control" id="password" placeholder="IP Address" name="user_ipaddress" value='<?php echo $key->user_ipaddress; ?>' required="required">
-                            </div>
-                            <div class="form-group">
-                              <label for="password">Salt</label>
-                                <input type="text" class="form-control" id="password" placeholder="Salt" name="user_salt" value='<?php echo $key->user_salt; ?>' required="required">
-                            </div>
-                            <div class="form-group">
-                              <label for="password">Email</label>
-                                <input type="email" class="form-control" id="password" placeholder="Email" name="user_email" value='<?php echo $key->user_email; ?>' required="required">
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="password">Waktu Dibuat</label>
-                              <div class="input-append date form_datetime">
-                                  <input type="text" value="<?php echo $key->user_created; ?>" class="form-control" name="user_created" >
-                                  <span class="add-on"><i class="icon-calendar"></i></span>
-                              </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password">Login Terakhir</label>
-                              <div class="input-append date form_datetime">
-                                  <input type="text" value="<?php echo $key->user_lastlogin; ?>" class="form-control" name="user_lastlogin" >
-                                  <span class="add-on"><i class="icon-calendar"></i></span>
-                              </div>
-                            </div>
-
-                            <!--div class="form-group">
-                              <label for="password">Dibuat</label>
-                              <?php  $buat = strftime('%Y-%m-%dT%H:%M:%S', strtotime($key->user_created)); ?>
-                                <input type="datetime-local" class="form-control" id="password" placeholder="Dibuat" name="user_created" value='<?php echo $buat; ?>' required="required">
-                            </div>
-                            <div class="form-group">
-                              <label for="password">Login Terakhir</label>
-                              <?php  $login = strftime('%Y-%m-%dT%H:%M:%S', strtotime($key->user_lastlogin)); ?>
-                                <input type="datetime-local" class="form-control" id="password" placeholder="Login Terakhir" name="user_lastlogin" value='<?php echo $login; ?>' required="required" >
-                            </div>
-                            <div class="form-group">
-                              <label for="password">Active</label>
-                                <input type="text" class="form-control" id="password" placeholder="Maks 5 karakter" name="username_active" value='<?php echo $key->username_active; ?>' required="required">
-                            </div-->
                             <div class="form-group">
                                 <label for="password">Kategori</label>
                               <select class="form-control" name="group_id" required="required">

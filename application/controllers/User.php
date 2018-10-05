@@ -23,100 +23,41 @@ class User extends CI_Controller {
     }
 
     public function input() {
-       $this->load->library('upload');
-
-       $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
-       $config['upload_path'] = './assets/user/'; //path folder
-       $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-       $config['max_size'] = '10240'; //maksimum besar file 2M
-       $config['max_width']  = '2048'; //lebar maksimum 1288 px
-       $config['max_height']  = '2048'; //tinggi maksimu 768 px
-       $config['file_name'] = $nmfile; //nama yang terupload nantinya
-
-       $this->upload->initialize($config);
-
-       if($_FILES['gambar']['name'])
-        {
-            if ($this->upload->do_upload('gambar'))
-            {
-                $gbr = $this->upload->data();
-                $data = array(
-                  'gambar' =>$gbr['file_name'],
-                  'judul' =>$this->input->post('judul'),
-                  'isi' =>$this->input->post('isi'),
-                );
-
-                $this->m_agenda->input($data);
-
-            }
-        }
-
-        else
-        {
+        $data['user_id']       = "";
         $data['user_name'] = $this->input->post('user_name');
         $data['user_password'] = md5($this->input->post('user_password'));
-        $data['user_ipaddress'] = $this->input->post('user_ipaddress');
-        $data['user_salt'] = $this->input->post('user_salt');
-        $data['user_email'] = $this->input->post('user_email');
-        $data['user_created'] = $this->input->post('user_created');
-        $data['user_lastlogin'] = $this->input->post('user_lastlogin');
-        $data['username_active'] = $this->input->post('username_active');
+        $data['user_fullname'] = $this->input->post('user_fullname');
         $data['group_id'] = $this->input->post('group_id');
         //call function
         $this->M_user->input($data);
         //redirect to page
-
-      }
           redirect('User'); //jika berhasil maka akan ditampilkan view vupload
     }
 
     public function edit() {
-      $this->load->library('upload');
-
-      $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
-      $config['upload_path'] = './assets/agenda/'; //path folder
-      $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-      $config['max_size'] = '2048'; //maksimum besar file 2M
-      $config['max_width']  = '1288'; //lebar maksimum 1288 px
-      $config['max_height']  = '768'; //tinggi maksimu 768 px
-      $config['file_name'] = $nmfile; //nama yang terupload nantinya
-
-      $this->upload->initialize($config);
-
-      if($_FILES['gambar']['name'])
-       {
-           if ($this->upload->do_upload('gambar'))
-           {
-               $gbr = $this->upload->data();
-               $data = array(
-                 'id_agenda' =>$this->input->post('id_agenda'),
-                 'gambar' =>$gbr['file_name'],
-                 'judul' =>$this->input->post('judul'),
-                 'isi' =>$this->input->post('isi'),
-               );
-               $this->m_agenda->edit($data);
-           }
-       }
-
-       else
-       {
-
-         $data['user_id'] = $this->input->post('user_id');
-         $data['user_name'] = $this->input->post('user_name');
-         $data['user_password'] = md5($this->input->post('user_password'));
-         $data['user_ipaddress'] = $this->input->post('user_ipaddress');
-         $data['user_salt'] = $this->input->post('user_salt');
-         $data['user_email'] = $this->input->post('user_email');
-         $data['user_created'] = $this->input->post('user_created');
-         $data['user_lastlogin'] = $this->input->post('user_lastlogin');
-         $data['username_active'] = $this->input->post('username_active');
-         $data['group_id'] = $this->input->post('group_id');
-        //call function
-       $this->M_user->edit($data);
-       //redirect to page
-
-     }
-         redirect('User'); //jika berhasil maka akan ditampilkan view vupload
+     $password        = $this->input->post('user_password');
+    $oldpassword     = $this->input->post('old_password');
+    $newpassword     = $this->input->post('new_password');
+    $confirmpassword = $this->input->post('confirm_password');
+    if ($oldpassword != "") {
+      if (md5($oldpassword) == $password) {
+        if ($newpassword == $confirmpassword) {
+          $data['user_id']       = $this->input->post('user_id');
+          $data['user_name']     = $this->input->post('user_name');
+          $data['user_fullname'] = $this->input->post('user_fullname');
+          $data['user_status']   = $this->input->post('user_status');
+          $data['user_password'] = md5($confirmpassword);
+          $this->m_user->edit($data);
+        }
+      }
+    } else {
+      $data['user_id']       = $this->input->post('user_id');
+      $data['user_name']     = $this->input->post('user_name');
+      $data['user_fullname'] = $this->input->post('user_fullname');
+      $data['user_status']   = $this->input->post('user_status');
+      $this->m_user->edit($data);
+    }
+    redirect('user');
     }
 
     public function delete() {

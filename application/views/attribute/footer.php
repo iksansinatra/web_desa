@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0
     </div>
-    <strong>Desa &copy;  <?php echo date("Y"); ?> <a href="">Teknik_Informatika</a>.</strong> All rights reserved.
+    <strong>Desa &copy;  <?php echo date("Y"); ?></strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

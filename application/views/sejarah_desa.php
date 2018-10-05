@@ -26,12 +26,20 @@
                   </div>
                   <div class="form-group">
                     <label for="password">Sejarah Desa</label>
-                      <input type="text" class="form-control" id="password" placeholder="Sejarah Desa" name="sejarah_desa" required="required">
+                      <textarea  class="form-control" id="editor1" placeholder="Sejarah Desa" name="sejarah_desa" required="required"></textarea>
                   </div>
+                  <!-- <div class="form-group">
+                    <label for="password">Sejarah Desa</label>
+                      <input type="text" class="form-control" id="password" placeholder="Sejarah Desa" name="sejarah_desa" required="required">
+                  </div> -->
                   <div class="form-group">
                     <label for="password">Sejarah Pemerintahan</label>
-                      <input type="text" class="form-control" id="password" placeholder="Sejarah Pemerintahan" name="sejarah_pemerintahan" required="required">
+                      <textarea  class="form-control" id="editor1" placeholder="Sejarah Pemerintahan" name="sejarah_pemerintahan" required="required"></textarea>
                   </div>
+                  <!-- <div class="form-group">
+                    <label for="password">Sejarah Pemerintahan</label>
+                      <input type="text" class="form-control" id="password" placeholder="Sejarah Pemerintahan" name="sejarah_pemerintahan" required="required">
+                  </div> -->
                   <div class="form-group">
                     <label for="password">Gambar</label>
                     <input type="file" class="form-control" id="password" placeholder="Foto" name="gambar">
@@ -122,11 +130,15 @@
                             </div>
                             <div class="form-group">
                               <label for="password">Sejarah Desa</label>
-                              <input type="text" class="form-control"  value='<?php echo $key->sejarah_desa; ?>' name="sejarah_desa" required="required">
+                                <textarea class="form-control" id="editor2" name="sejarah_desa" required="required">
+                                  <?php echo $key->sejarah_desa;?>
+                                </textarea>
                             </div>
                             <div class="form-group">
                               <label for="password">Sejarah Pemerintahan</label>
-                              <input type="text" class="form-control"  value='<?php echo $key->sejarah_pemerintahan; ?>' name="sejarah_pemerintahan" required="required">
+                                <textarea class="form-control" id="editor2" name="sejarah_pemerintahan" required="required">
+                                  <?php echo $key->sejarah_pemerintahan;?>
+                                </textarea>
                             </div>
               <div class="form-group">
                               <label for="password">Gambar</label>
