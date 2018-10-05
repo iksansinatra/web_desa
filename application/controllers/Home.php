@@ -7,50 +7,21 @@ class Home extends CI_Controller {
         $this->load->model("M_gambar");
         $this->load->model("M_berita");
         $this->load->model("M_perangkat");
-		$this->load->model("M_foto");
-		$this->load->model("M_foto_kegiatan");
-		$this->load->model("M_video");
+    		$this->load->model("M_foto");
+    		$this->load->model("M_foto_kegiatan");
+    		$this->load->model("M_video");
         $this->load->model("M_agenda");
-		$this->load->model("M_potensi");
+		    $this->load->model("M_potensi");
         $this->load->library("pagination");
     }
 
-  /*  public function index(){
-      $lang=$this->input->get('ln');
-      if($lang == "en")
-      {
-        $data['lang']=true;
-      }
-      else
-      {
-        $data['lang']=false;
-      }
-      //var_dump($lang);
 
-      $config = array();
-        $config["base_url"] = base_url() . "index.php/Home/index/";
-        $config["total_rows"] = $this->m_galeri->record_count();
-        $config["per_page"] = 6;
-        $config["uri_segment"] = 3;
-
-        $this->pagination->initialize($config);
-
-        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $data["galeri"] = $this->m_galeri->fetch_countries($config["per_page"], $page);
-        $data["links"] = $this->pagination->create_links();
-
-      $data['gambar']=$this->m_gambar->tampil_data_gambar();
-      $data['pengumuman']=$this->m_pengumuman->tampil_data_pengumuman();
-      $data['berita']=$this->m_notif->tampil_data_penerima();
-      $data['agenda']=$this->m_agenda->tampil_data_agenda();
-    //  $data['galeri']=$this->m_galeri->tampil_data_galeri();
-
-
-        $this->load->view("beranda",$data);
-    }
-
+<<<<<<< HEAD
 */
     // public function berita(){
+=======
+    public function berita(){
+>>>>>>> b4026377b3286271e3586e69e5bca5f0e9dae805
 
     //   $data['berita']=$this->M_notif->tampil_data_penerima();
     //   $this->load->view("berita",$data);
@@ -114,11 +85,12 @@ class Home extends CI_Controller {
         }
     }
 
+
     public function index1(){
 
+            $data['gambar']=$this->M_gambar->tampil_data_gambar();
 
-            $this->load->view("frontend/index.php");
-
+            $this->load->view("frontend/index.php",$data);
     }
 
     public function login(){

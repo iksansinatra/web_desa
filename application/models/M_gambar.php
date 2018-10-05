@@ -13,7 +13,7 @@ class M_gambar extends CI_Model{
     }
 
 	public function tampil_data_gambar() {
-        $query  = $this->db->query("select * from gambar");
+        $query  = $this->db->query("select * from table_image");
         return $query->result();
     }
 
