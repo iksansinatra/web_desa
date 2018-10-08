@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Okt 2018 pada 18.11
+-- Generation Time: 08 Okt 2018 pada 07.42
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `table_agenda` (
   `agenda_time` time NOT NULL,
   `agenda_place` text NOT NULL,
   `agenda_organizer` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `table_berkas` (
   `berkas_name` varchar(200) NOT NULL,
   `berkas_desc` text NOT NULL,
   `berkas_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,14 @@ CREATE TABLE IF NOT EXISTS `table_desa` (
   `sejarah_desa` text NOT NULL,
   `sejarah_pemerintahan` text NOT NULL,
   `sejarah_image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `table_desa`
+--
+
+INSERT INTO `table_desa` (`sejarah_id`, `sejarah_title`, `sejarah_desa`, `sejarah_pemerintahan`, `sejarah_image`) VALUES
+(1, 'SEJARAH DESA LAYWO JAYA', '<p><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Desa Laywo&nbsp; Jaya merupakan salah satu desa di Kecamatan Wawonii Timur Kabupaten Konawe Kepulauan. Desa ini terletak tidak jauh dari ibukota kecamatan Wawonii Timur dengan jarak 0,5 km, sedangkan jarak ke ibukota kabupaten 38,5 km. Desa laywo Jaya berbatasan dengan Desa Laywo Jaya di sebelah utara, Kelurahan Munse di sebelah selatan, laut banda disebelah timur dan gunung waworete disebelah barat. Desa Laywo Jaya merupakan desa pemekaran dari Desa Munse Indah pada Tahun 2011 dan dipimpin oleh seorang Pejabat (PJ)&nbsp; Kepala Desa atas nama Sulasno Saleh.</span></span></p>\r\n', 'Desa Laywo Jaya sebagai sebuah organisasi yang berada di bawah kecamatan Wawonii Timur memiliki struktur organisasi yang bertujuan untuk menjalankan roda organisasi serta roda pemerintahan tingkat desa. Desa Laywo Jaya merupakan desa baru dimekarkan hal ini dibuktikan dengan pemilihan kepala desa yang diadaka baru satu kali. Namun, selama terbentuknya desa laywo jaya tercatat 3 orang sudah pernah menjadi pemimpin sekaligus “bapak” bagi seluruh penduduk desa laywo jaya.', 'file_1538713172.jpeg');
 
 -- --------------------------------------------------------
 
@@ -154,22 +161,15 @@ INSERT INTO `table_image` (`image_id`, `image_name`, `image_desc`, `image_file`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `table_job`
+-- Struktur dari tabel `table_jobs`
 --
 
-CREATE TABLE IF NOT EXISTS `table_job` (
+CREATE TABLE IF NOT EXISTS `table_jobs` (
   `job_id` int(11) NOT NULL,
   `job_name` varchar(200) NOT NULL,
   `job_desc` text NOT NULL,
   `jobscategory_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `table_job`
---
-
-INSERT INTO `table_job` (`job_id`, `job_name`, `job_desc`, `jobscategory_id`) VALUES
-(8, 'cc', 'ee', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `table_news` (
   `news_image` text NOT NULL,
   `news_author` varchar(200) NOT NULL,
   `news_date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -298,7 +298,31 @@ CREATE TABLE IF NOT EXISTS `table_pariwisata` (
   `pariwisata_name` varchar(200) NOT NULL,
   `pariwisata_desc` text NOT NULL,
   `pariwisata_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `table_pemerintahan`
+--
+
+CREATE TABLE IF NOT EXISTS `table_pemerintahan` (
+  `sejarah_id` int(11) NOT NULL,
+  `sejarah_name` varchar(200) NOT NULL,
+  `sejarah_periode` text NOT NULL,
+  `sejarah_keterangan` text NOT NULL,
+  `sejarah_image` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `table_pemerintahan`
+--
+
+INSERT INTO `table_pemerintahan` (`sejarah_id`, `sejarah_name`, `sejarah_periode`, `sejarah_keterangan`, `sejarah_image`) VALUES
+(3, 'Sulasno Saleh', '2008 - 2010', 'Pejabat Kepala Desa', 'file_1538885851.jpeg'),
+(4, 'Alimuddin, A. S.E', '2010 – 2012 ', 'Pejabat Kepala Desa', 'file_1538885932.jpeg'),
+(5, 'Pirdaus', '2012 – 2014', 'Pejabat Kepala Desa', 'file_1538885973.jpeg'),
+(6, 'Pirdaus', '2014 - 2020', 'Kepala Desa', 'file_1538885996.jpeg');
 
 -- --------------------------------------------------------
 
@@ -357,7 +381,7 @@ CREATE TABLE IF NOT EXISTS `table_potency` (
   `potensi_name` varchar(200) NOT NULL,
   `potensi_desc` text NOT NULL,
   `potensi_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -408,6 +432,26 @@ INSERT INTO `table_tarjihcategory` (`tarjihcategory_id`, `tarjihcategory_name`, 
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `table_topografi`
+--
+
+CREATE TABLE IF NOT EXISTS `table_topografi` (
+  `topografi_id` int(11) NOT NULL,
+  `topografi_name` varchar(200) NOT NULL,
+  `topografi_desc` text NOT NULL,
+  `topografi_image` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `table_topografi`
+--
+
+INSERT INTO `table_topografi` (`topografi_id`, `topografi_name`, `topografi_desc`, `topografi_image`) VALUES
+(8, 'Iklim dan Topografi Desa', '<p><span style="font-size:12.0pt">Secara umum keadaan iklim di Desa Laywo Jaya Kecamatan Wawonii Timur Kabupaten Konawe Kepulauan tidak jauh berbeda dengan keadaan iklim pada beberapa wilayah lain yang ada di Indonesia. Ciri iklim tropis dengan dua jenis musim dalam setahun merupakan sifat kondisi iklim secara umum yang terjadi di Indonesia khususnya di Desa Laywo Jaya. Dua jenis musim yang dimaksud adalah musim penghujan dan musim kemarau. Pada musim penghujan biasanya terjadi pada bulan April sampai bulan Juni, sedangkan musim kemarau terjadi pada bulan Juli sampai bulan Oktober dan terkadang musim hujan dan musim kemarau terjadi pada bulan November sampai bulan Maret. Kedua musim ini sangat mempengaruhi kehidupan masyarakat di Desa Laywo Jaya, hal ini disebabkan oleh dampak yang ditimbulkan oleh kedua musim tersebut. Sementara itu, Desa Laywo Jaya berada di ketinggian 10 mdpl.</span></p>\r\n', 'file_1538886786.jpeg');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `table_user`
 --
 
@@ -416,18 +460,18 @@ CREATE TABLE IF NOT EXISTS `table_user` (
   `user_name` varchar(100) NOT NULL,
   `user_password` varchar(200) NOT NULL,
   `user_fullname` varchar(255) NOT NULL,
-  `username_active` char(5) NOT NULL,
   `group_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_user`
 --
 
-INSERT INTO `table_user` (`user_id`, `user_name`, `user_password`, `user_fullname`, `username_active`, `group_id`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '192.168.1.1', '1', 1),
-(3, 'ivan', '2c42e5cf1cdbafea04ed267018ef1511', 'asgh', '2', 2),
-(4, 'admin', 'cacd5ea564694b0eefd8df909822f18a', 'cdvc', 'cscsd', 1);
+INSERT INTO `table_user` (`user_id`, `user_name`, `user_password`, `user_fullname`, `group_id`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '192.168.1.1', 1),
+(3, 'ivan', '2c42e5cf1cdbafea04ed267018ef1511', 'asgh', 2),
+(4, 'admin', 'cacd5ea564694b0eefd8df909822f18a', 'cdvc', 1),
+(5, 'iksan', '4edd2c92ddf876f150b4fe8360a4d0da', 'iksan sinatra', 2);
 
 -- --------------------------------------------------------
 
@@ -457,7 +501,7 @@ CREATE TABLE IF NOT EXISTS `table_video` (
   `video_name` varchar(200) NOT NULL,
   `video_desc` text NOT NULL,
   `video_file` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -527,9 +571,9 @@ ALTER TABLE `table_image`
   ADD PRIMARY KEY (`image_id`);
 
 --
--- Indexes for table `table_job`
+-- Indexes for table `table_jobs`
 --
-ALTER TABLE `table_job`
+ALTER TABLE `table_jobs`
   ADD PRIMARY KEY (`job_id`),
   ADD KEY `jobscategory_id` (`jobscategory_id`);
 
@@ -582,6 +626,12 @@ ALTER TABLE `table_pariwisata`
   ADD PRIMARY KEY (`pariwisata_id`);
 
 --
+-- Indexes for table `table_pemerintahan`
+--
+ALTER TABLE `table_pemerintahan`
+  ADD PRIMARY KEY (`sejarah_id`);
+
+--
 -- Indexes for table `table_pendapatan`
 --
 ALTER TABLE `table_pendapatan`
@@ -612,6 +662,12 @@ ALTER TABLE `table_suggestion`
 --
 ALTER TABLE `table_tarjihcategory`
   ADD PRIMARY KEY (`tarjihcategory_id`);
+
+--
+-- Indexes for table `table_topografi`
+--
+ALTER TABLE `table_topografi`
+  ADD PRIMARY KEY (`topografi_id`);
 
 --
 -- Indexes for table `table_user`
@@ -648,7 +704,7 @@ ALTER TABLE `table_visi`
 -- AUTO_INCREMENT for table `table_agenda`
 --
 ALTER TABLE `table_agenda`
-  MODIFY `agenda_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `agenda_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `table_belanja`
 --
@@ -658,12 +714,12 @@ ALTER TABLE `table_belanja`
 -- AUTO_INCREMENT for table `table_berkas`
 --
 ALTER TABLE `table_berkas`
-  MODIFY `berkas_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `berkas_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `table_desa`
 --
 ALTER TABLE `table_desa`
-  MODIFY `sejarah_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sejarah_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `table_fasilitas`
 --
@@ -680,10 +736,10 @@ ALTER TABLE `table_groups`
 ALTER TABLE `table_image`
   MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
--- AUTO_INCREMENT for table `table_job`
+-- AUTO_INCREMENT for table `table_jobs`
 --
-ALTER TABLE `table_job`
-  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+ALTER TABLE `table_jobs`
+  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `table_jobscategory`
 --
@@ -713,7 +769,7 @@ ALTER TABLE `table_link`
 -- AUTO_INCREMENT for table `table_news`
 --
 ALTER TABLE `table_news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `table_newscategory`
 --
@@ -723,7 +779,12 @@ ALTER TABLE `table_newscategory`
 -- AUTO_INCREMENT for table `table_pariwisata`
 --
 ALTER TABLE `table_pariwisata`
-  MODIFY `pariwisata_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `pariwisata_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `table_pemerintahan`
+--
+ALTER TABLE `table_pemerintahan`
+  MODIFY `sejarah_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `table_pendapatan`
 --
@@ -738,7 +799,7 @@ ALTER TABLE `table_perangkat`
 -- AUTO_INCREMENT for table `table_potency`
 --
 ALTER TABLE `table_potency`
-  MODIFY `potensi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `potensi_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `table_suggestion`
 --
@@ -750,10 +811,15 @@ ALTER TABLE `table_suggestion`
 ALTER TABLE `table_tarjihcategory`
   MODIFY `tarjihcategory_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `table_topografi`
+--
+ALTER TABLE `table_topografi`
+  MODIFY `topografi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
 -- AUTO_INCREMENT for table `table_user`
 --
 ALTER TABLE `table_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `table_userprofile`
 --
@@ -763,7 +829,7 @@ ALTER TABLE `table_userprofile`
 -- AUTO_INCREMENT for table `table_video`
 --
 ALTER TABLE `table_video`
-  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `table_visi`
 --

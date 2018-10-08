@@ -16,46 +16,46 @@ class Home extends CI_Controller {
     }
 
 
-<<<<<<< HEAD
-*/
+// <<<<<<< HEAD
+// */
     // public function berita(){
-=======
+// =======
     public function berita(){
->>>>>>> b4026377b3286271e3586e69e5bca5f0e9dae805
+// >>>>>>> b4026377b3286271e3586e69e5bca5f0e9dae805
 
-    //   $data['berita']=$this->M_notif->tampil_data_penerima();
-    //   $this->load->view("berita",$data);
-    // }
+      $data['berita']=$this->M_notif->tampil_data_penerima();
+      $this->load->view("berita",$data);
+    }
 
-    // public function pengumuman(){
+    public function pengumuman(){
 
-    //   $data['pengumuman']=$this->M_pengumuman->tampil_data_pengumuman();
-    //   $this->load->view("pengumuman1",$data);
-    // }
+      $data['pengumuman']=$this->M_pengumuman->tampil_data_pengumuman();
+      $this->load->view("pengumuman1",$data);
+    }
 
-    // public function agenda(){
+    public function agenda(){
 
-    //   $data['agenda']=$this->M_agenda->tampil_data_agenda();
-    //   $this->load->view("agenda1",$data);
-    // }
+      $data['agenda']=$this->M_agenda->tampil_data_agenda();
+      $this->load->view("agenda1",$data);
+    }
 
-    // public function agenda1(){
-    //   $id=$this->input->get('id');
-    //   $data['agenda']=$this->M_agenda->tampil_data_agenda1($id);
-    //   $this->load->view("beranda3",$data);
-    // }
+    public function agenda1(){
+      $id=$this->input->get('id');
+      $data['agenda']=$this->M_agenda->tampil_data_agenda1($id);
+      $this->load->view("beranda3",$data);
+    }
 
-    // public function berita1(){
-    //   $id=$this->input->get('id');
-    //   $data['berita']=$this->M_notif->tampil_data_penerima1($id);
-    //   $this->load->view("beranda1",$data);
-    // }
+    public function berita1(){
+      $id=$this->input->get('id');
+      $data['berita']=$this->M_notif->tampil_data_penerima1($id);
+      $this->load->view("beranda1",$data);
+    }
 
-    // public function pengumuman1(){
-    //   $id=$this->input->get('id');
-    //   $data['pengumuman']=$this->M_pengumuman->tampil_data_pengumuman1($id);
-    //   $this->load->view("beranda2",$data);
-    // }
+    public function pengumuman1(){
+      $id=$this->input->get('id');
+      $data['pengumuman']=$this->M_pengumuman->tampil_data_pengumuman1($id);
+      $this->load->view("beranda2",$data);
+    }
 
     public function index(){
         if(!($this->session->userdata('userid'))){

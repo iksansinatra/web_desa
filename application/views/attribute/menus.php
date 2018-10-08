@@ -88,7 +88,7 @@
                     <i class="fa fa-newspaper-o text-red"></i><span>Jumlah Penduduk</span>
                   </a>
                 </li>
-        <li class="active"><a href="<?php echo site_url('Fasilitas')?>" >
+        <li class="active"><a href="<?php echo site_url('Topografi')?>" >
                     <i class="fa fa-calendar text-yellow"></i><span>Keadaan Iklim & Topografi</span>
                   </a></li>
                 </ul>

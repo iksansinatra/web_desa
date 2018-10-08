@@ -26,7 +26,8 @@
                   </div>
                   <div class="form-group">
                     <label for="password">Periode</label>
-                      <input type="number" class="form-control" min="2000" max="3000" id="sembarang" placeholder="Periode" name="sejarah_periode" required="required"> - <input type="number" class="form-control" min="2000" max="3000" id="sembarang" placeholder="Periode" name="sejarah_periode" required="required">
+                    <input type="text" class="form-control" id="password" placeholder="Periode" name="sejarah_periode" required="required">
+                      <!-- <input type="number" class="form-control" min="2000" max="3000" id="sembarang" placeholder="Periode" name="sejarah_periode" required="required"> - <input type="number" class="form-control" min="2000" max="3000" id="sembarang" placeholder="Periode" name="sejarah_periode" required="required"> -->
                   </div>
                   <div class="form-group">
                     <label for="password">Keterangan</label>
@@ -78,7 +79,7 @@
                     <td><?php echo $key->sejarah_name;?></td>
                     <td><?php echo $key->sejarah_periode;?></td>
                     <td><?php echo $key->sejarah_keterangan;?></td>
-          <td><a href="" data-toggle="modal" data-target="#imageModal<?php echo $id;?>"><img src="<?php echo base_url()?>/assets/sejarah_desa/<?php echo $key->sejarah_image;?>" width="100" height="100"></a></td>
+          <td><a href="" data-toggle="modal" data-target="#imageModal<?php echo $id;?>"><img src="<?php echo base_url()?>/assets/sejarah_pemerintahan/<?php echo $key->sejarah_image;?>" width="100" height="100"></a></td>
                     <td>
 
                       <button type="button" class="btn btn-xs btn-success" title="Edit" data-toggle="modal" data-target="#edit<?php echo $id;?>"><i class="fa fa-edit"></i></button>
@@ -96,7 +97,7 @@
                             </div>
                             <div class="modal-body">
                               <div class="box-body">
-                                 <center><img src="<?php echo base_url()?>assets/sejarah_desa/<?php echo $key->sejarah_image;?>" height="300px" width="300px"></center>
+                                 <center><img src="<?php echo base_url()?>assets/sejarah_pemerintahan/<?php echo $key->sejarah_image;?>" height="300px" width="300px"></center>
                               </div>
                             </div>
                              
@@ -113,20 +114,20 @@
                         </div>
                         <div class="modal-body">
                           <div class="box-body">
-                           <?php echo form_open_multipart("Sejarah_Desa/edit");?>
+                           <?php echo form_open_multipart("Sejarah_Pemerintahan/edit");?>
                              <div class="form-group">
-                              <label for="password">Judul</label>
-                              <input type="text" class="form-control"  value='<?php echo $key->sejarah_title; ?>' name="sejarah_title" required="required">
+                              <label for="password">Nama</label>
+                              <input type="text" class="form-control"  value='<?php echo $key->sejarah_name; ?>' name="sejarah_name" required="required">
                               <input type="hidden" class="form-control"   value='<?php echo $key->sejarah_id; ?>' name="sejarah_id" required="required" >
                               <input type="hidden" class="form-control" value='<?php echo $key->sejarah_image; ?>' name="sejarah_image" required="required" readonly>
                             </div>
                             <div class="form-group">
-                              <label for="password">Sejarah Desa</label>
-                              <input type="text" class="form-control"  value='<?php echo $key->sejarah_desa; ?>' name="sejarah_desa" required="required">
+                              <label for="password">Periode</label>
+                              <input type="text" class="form-control"  value='<?php echo $key->sejarah_periode; ?>' name="sejarah_periode" required="required">
                             </div>
                             <div class="form-group">
-                              <label for="password">Sejarah Pemerintahan</label>
-                              <input type="text" class="form-control"  value='<?php echo $key->sejarah_pemerintahan; ?>' name="sejarah_pemerintahan" required="required">
+                              <label for="password">Keterangan</label>
+                              <input type="text" class="form-control"  value='<?php echo $key->sejarah_keterangan; ?>' name="sejarah_keterangan" required="required">
                             </div>
               <div class="form-group">
                               <label for="password">Gambar</label>
@@ -147,13 +148,13 @@
                     <div class="modal-dialog">
                     <!-- Modal content-->
                       <div class="modal-content">
-                        <?php echo form_open("Sejarah_Desa/delete");?>
+                        <?php echo form_open("Sejarah_Pemerintahan/delete");?>
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title">Hapus Sejarah Desa</h4>
+                              <h4 class="modal-title">Hapus Sejarah Pemerintahan</h4>
                             </div>
                             <div class="modal-body">
-                              <div class="alert alert-danger">Apakah anda yakin ingin menghapus "<b><?php echo $key->sejarah_title?></b>" ?</div>
+                              <div class="alert alert-danger">Apakah anda yakin ingin menghapus "<b><?php echo $key->sejarah_name?></b>" ?</div>
                             </div>
                             <div class="modal-footer">
                               <input type="hidden" class="form-control" value="<?php echo $key->sejarah_id?>" name="sejarah_id" required="required">
