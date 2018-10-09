@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Okt 2018 pada 07.42
+-- Generation Time: 09 Okt 2018 pada 20.39
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -273,7 +273,17 @@ CREATE TABLE IF NOT EXISTS `table_news` (
   `news_image` text NOT NULL,
   `news_author` varchar(200) NOT NULL,
   `news_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `table_news`
+--
+
+INSERT INTO `table_news` (`news_id`, `news_title`, `news_content`, `news_image`, `news_author`, `news_date`) VALUES
+(1, 'Ratna Sarumpaet Disebut Ahokers, Ini Kata Mantan Staf Ahok', '<p><strong>Jakarta</strong> - Wakil Ketua Majelis Syuro PKS, Hidayat Nur Wahid (HNW) menyebut <a href="https://www.detik.com/tag/ratna-sarumpaet" target="_blank">Ratna Sarumpaet </a>sebagai pendukung Ahok alias Ahokers di Pilgub DKI 2012 lalu. Mantan staf Ahok, Rian Ernest mengungkapkan tidak ada satupun tindakan yang dilakukan Ratna yang mencerminkan sebagai Ahokers.<br />\r\n<br />\r\n&quot;Selama saya bekerja sama Pak Ahok, dari 2015 sampai 2017, nggak pernah sekalipun saya dengar dukungan dari Bu Ratna Sarumpaet ke Pak Ahok. Seingat saya, nggak pernah tuh sekalipun saya melihat Bu Ratna Sarumpaet masuk bertamu ke Balai Kota. Banyak kok orang terkenal mampir ke Balai Kota, mampir ke ruangan gubernur,&quot; ujar Rian yang juga Jubir Partai Solidaritas Indonesia (PSI), Senin (8/10/2018). baca https://news.detik.com/berita/4247973/ratna-sarumpaet-disebut-ahokers-ini-kata-mantan-staf-ahok</p>\r\n', 'file_1539109109.jpeg', 'Niken Purnamasari - detikNews', '2018-10-09'),
+(2, 'Gempa 3,8 SR Sempat Guncang Kendari', '<p>Badan Meteorologi klimatologi dan Geofisika (<a href="https://www.suara.com/tag/bmkg" rel="nofollow">BMKG</a>) menyatakan, telah terjadi <a href="https://www.suara.com/tag/gempa-bumi" rel="nofollow">gempa bumi</a> tektonik berkekuatan 3,8 SR yang mengguncang wilayah BaratLaut (<a href="https://www.suara.com/tag/kendari" rel="nofollow">Kendari</a>) - Sulawesi Tenggara pada hari Kamis (4/10/2018) malam.</p>\r\n\r\n<p>Kepala Stasiun Geofisika Kendari, Rosa Amelia, di Kendari, Kamis mengatakan hasil analisis BMKG menunjukan bahwa gempa terjadi pada pukul 23:19:31 wita dengan episenter 3.93 LS- 122.38 BT.</p>\r\n\r\n<p>&quot;Gempa terpusat sekitar 26.8 kilometer Barat laut Kendari- Sulawesi Tenggara berkekuatan M=3,8,&quot; katanya.</p>\r\n\r\n<p>Ia mengatakan, berdasarkan laporan masyarakat menunjukan bahwa dampak gempa bumi berupa goncangan keras dirasakan di wilayah Kendari dalam skala intensitas II SIG-BMKG (III MMI).</p>\r\n\r\n<p>&quot;Di daerah ini goncangan gempa bumi dilaporkan dirasakan oleh banyak orang,&quot; katanya.</p>\r\n\r\n<p>Dijelaskan, hasil koordinasi hingga saat laporan ini dibuat belum ada informasi adanya kerusakan akibat gempa bumi tersebut.</p>\r\n\r\n<p>&quot;Terkait dengan peristiwa gempabumi di wilayah Kendari ini, hingga laporan ini disusun pada pukul 00.30 wita, belum terjadi aktivitas gempabumi susulan. Masyarakat dihimbau agar tetap tenang,&quot; katanya.</p>\r\n\r\n<p>Ditinjau dari kedalamannya, kata Rosa, gempabumi ini merupakan gempabumi dangkal akibat aktivitas Sesar Kendari di wilayah Kendari-Sulawesi Tenggara.</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'file_1539109349.jpg', ' Dythia Novianty', '2018-10-05'),
+(3, '3 Bandar Narkoba Ditembak Mati', '<p>Tim gabungan narkoba Polda Sumsel dan Polresta Palembang menembak mati tiga gembong pengedar narkoba jenis sabu-sabu asal Kota <a href="https://www.suara.com/tag/kendari" rel="nofollow">Kendari</a>, <a href="https://www.suara.com/tag/sulawesi-tenggara" rel="nofollow">Sulawesi Tenggara</a>.</p>\r\n\r\n<p>Ketiganya yakni, Michael Ramon Rambang (30), Erwin Oron (26) dan Jonly Alvin Wowor (27). Polisi terpaksa menembak lantaran ketiganya berupaya kabur dari kejaran dan berusaha melawan polisi.</p>\r\n', 'file_1539109472.jpg', ' Ferry Noviandi', '2018-04-29'),
+(4, 'Pembangunan Jembatan Teluk Kendari Ditargetkan Selesai Tahun 2018', '<p>Sekretaris Jenderal Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR)Taufik Widjoyono mewakili Menteri PUPR, Basuki Hadimuljono meresmikan pembangunan awal &nbsp;(groundbreaking) <a href="https://www.suara.com/tag/jembatan-teluk-kendari" rel="nofollow">Jembatan Teluk Kendari</a>, Sulawesi Tenggara, Jumat (19/8/2016). Groundbreaking ditandai dengan penekanan tombol oleh Sekjen PUPR Taufik Widjoyono dan Gubernur Sulawesi Tenggara Nur Alam dan pemancangan tiang pondasi jembatan di tengah teluk kendari.</p>\r\n', 'file_1539109733.jpeg', ' Adhitya Himawan', '2016-08-21');
 
 -- --------------------------------------------------------
 
@@ -298,7 +308,19 @@ CREATE TABLE IF NOT EXISTS `table_pariwisata` (
   `pariwisata_name` varchar(200) NOT NULL,
   `pariwisata_desc` text NOT NULL,
   `pariwisata_image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `table_pariwisata`
+--
+
+INSERT INTO `table_pariwisata` (`pariwisata_id`, `pariwisata_name`, `pariwisata_desc`, `pariwisata_image`) VALUES
+(1, 'Pulau Labengki', '<p>Banyak yang berkata bahwa pulau ini tak kalah menarik jika dibandingkan dengan Raja Ampat yang ada di bumi Papua&mdash;baik dari panoramanya, maupun keindahan bawah lautnya. Ya, nama pulau ini adalah Pulau Labengki. Lokasinya terletak di Desa Labengki, Kecamatan Lasolo, Kabupaten Konawe Utara, Provinsi Sulawesi Tenggara. Kalau kamu berangkat dari pusat Kota Kendari, maka kamu harus menempuh jarak sekitar 70 km untuk sampai ke lokasi.</p>\r\n', 'file_1539110143.jpg'),
+(2, 'Pulau Bokori', '<p>Pulau Bokori merupakan sebuah pulau kecil yang terletak di depan Tanjung Soropia, Kecamatan Soropia, Sulawesi Tenggara. Untuk mencapainya, kamu bisa memulai perjalanan dari pusat Kota Kendari dengan waktu tempuh sekitar 30 menit perjalanan menuju perkampungan Bajo, Kecamatan Sorobia. Setelah itu, kamu masih harus menyewa perahu nelayan. Waktu tempuhnya sekitar 3 jam perjalanan. Harga sewa per-perahu dipatok dengan harga Rp. 400.000,00 &ndash; Rp. 500.000,00 (kapasitas 15 orang penumpang).</p>\r\n', 'file_1539110183.jpg'),
+(3, 'Pulau Senja', '<p>Lokasi Pulau Senja hanya berjarak sekitar 50 km dari pusat Kota Kendari, atau sekitar &nbsp;45 menit perjalanan dengan menggunakan kendaraan bermotor. Tepatnya berada di Desa Wawatu, Kabupaten Konawe Selatan, Provinsi Sulawesi Tenggara. Lokasinya yang tidak terlalu jauh dengan pusat kota menjadikan pulau ini begitu diminati para wisatawan. Sesampainya di lokasi, kamu akan disuguhi pemandangan pantai yang memukau, lengkap dengan tebing-tebing karang dan pepohonan yang tinggi menjulang. Setelah puas menikmati wilayah pantainya, kamu juga bisa menyusuri jalan setapak bebatuan untuk sampai ke Bukit Pulau Senja. Dari atas bukit ini kamu bisa melihat betapa eksotisnya Pulau Senja.</p>\r\n', 'file_1539110219.jpg'),
+(4, 'Pulau Tomia', '<p>Pulau Tomia merupakan salah satu pulau yang terletak di gugusan kepulauan Tukang Besi wilayah Kabupaten Wakatobi, Kendari, Provinsi Sulawesi Tenggara. Pulau ini terletak di sebelah selatan Pulau Kaledupa dan di sebelah utara Pulau Binongko. Selain Pulau Tomia, kamu juga bisa menemukan beberapa pulau-pulau lainnya, antara lain: Pulau Kaledupa, Pulau Binongko, Pulau Wangi-wangi, Pulau Hoga, dan Pulau Kapota.</p>\r\n', 'file_1539110253.jpg'),
+(5, 'Pantai Nirwana', '<p>Pantai Nirwana dikenal karena keindahan alamnya yang sangat memesona, sehingga membuat siapapun yang berkunjung ke pantai ini serasa berada di surga (nirwana). Lokasinya terletak di Kelurahan Sula, Kecamatan Betoambari, Bau-Bau, Buton, Provinsi Sulawesi Tenggara. Kalau kamu berangkat dari pusat Kota Bau-Bau, maka jarak yang akan kamu tempuh untuk mencapai lokasi sekitar 9 km, atau setara dengan 15 menit perjalanan.</p>\r\n', 'file_1539110288.jpg'),
+(6, 'Danau Biru: Surga Tersembunyi di Kolaka Utara', '<p>Danau Biru terletak di Kecamatan Wolu, Kabupaten Kolaka Utara, Sulawesi Tenggara. Danau ini memiliki luas diameter sekitar 164 meter persegi. Uniknya lagi, air Danau Biru ini terdiri dari campuran antara air asin dan air tawar, atau sering disebut sebagai air payau. Untuk kedalamannya pun cukup bervariasi, mulai dari 1 meter, hingga yang terdalam mencapai 7 meter. Ohya, di sini kamu juga bisa melakukan kegiatan snorkeling dengan mengamati berbagai spesies ikan dan tumbuhan air. Tapi ingat, kegiatan ini hanya diperuntukkan buat kamu-kamu yang bisa berenang. Oke, untuk memasukinya objek wisata ini, kamu diharuskan membayar mahar sebesar Rp. 10.000,00 lengkap dengan biaya parkir kendaraan.</p>\r\n', 'file_1539110331.jpg');
 
 -- --------------------------------------------------------
 
@@ -361,14 +383,27 @@ CREATE TABLE IF NOT EXISTS `table_perangkat` (
   `perangkat_date` date NOT NULL,
   `perangkat_sk` varchar(200) NOT NULL,
   `perangkat_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_perangkat`
 --
 
 INSERT INTO `table_perangkat` (`perangkat_id`, `perangkat_name`, `perangkat_text`, `perangkat_place`, `perangkat_date`, `perangkat_sk`, `perangkat_image`) VALUES
-(20, 'PIRDAUS', 'Kepala Desa', 'Munse', '1972-11-20', '05 Tahun 2005 Tahun 2018', 'file_1538667612.jpeg');
+(20, 'PIRDAUS', 'Kepala Desa', 'Munse', '1972-11-20', '05 Tahun 2005 Tahun 2018', 'file_1538667612.jpeg'),
+(22, 'HARUMIN', 'Sekretaris Desa', 'Munse', '1976-05-10', '05 Tahun 2018', 'file_1539108015.jpg'),
+(23, 'MUAMAL, B', 'Kepala Dusun I', 'Munse', '1991-08-07', '05 Tahun 2018', 'blank.jpg'),
+(24, 'AMAL HUDHA', 'Kepala Dusun II', 'Munse', '1988-02-10', '05 Tahun 2018', 'blank.jpg'),
+(25, 'ARISMAN, A', 'Kepala Dusun III', 'Munse ', '1993-04-09', '05 Tahun 2018', 'blank.jpg'),
+(26, 'HAERUDDIN', 'Kaur Keuangan', 'Munse', '1988-07-18', '05 Tahun 2018', 'blank.jpg'),
+(27, 'MUH. DONG', 'Kaur Tata Usaha Dan Umum', 'Munse', '1980-08-09', '05 Tahun 2018', 'blank.jpg'),
+(28, 'AJAD SUDRAJAD', 'Kaur  Perencanaan', 'Munse', '1990-11-05', '05 Tahun 2018', 'blank.jpg'),
+(29, 'DIMAS ADRIANTO', 'Kepala Seksi Pemerintahan', 'Munse', '1989-01-03', '05 Tahun 2018', 'blank.jpg'),
+(30, 'UMRIAH', 'Kepala Seksi Pelayanan', 'Munse ', '1972-03-11', '05 Tahun 2018', 'blank.jpg'),
+(31, 'ST. DARMINA', 'Kepala Seksi Kesejahteraan', 'Munse', '1980-11-10', '05 Tahun 2018', 'blank.jpg'),
+(32, 'ST. SAMRA', 'Guru TPQ', 'Munse', '1971-07-10', '05 Tahun 2018', 'blank.jpg'),
+(33, 'MANSYUR, A', 'Bonto', 'Waworope', '1951-04-07', '05 Tahun 2018', 'blank.jpg'),
+(34, 'SIRAJUDDIN', 'Imam Desa', 'Munse', '1952-05-05', '05 Tahun 2018', 'blank.jpg');
 
 -- --------------------------------------------------------
 
@@ -381,7 +416,16 @@ CREATE TABLE IF NOT EXISTS `table_potency` (
   `potensi_name` varchar(200) NOT NULL,
   `potensi_desc` text NOT NULL,
   `potensi_image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `table_potency`
+--
+
+INSERT INTO `table_potency` (`potensi_id`, `potensi_name`, `potensi_desc`, `potensi_image`) VALUES
+(1, 'Melihat arah pembangunan Kota Kendari', '<p>Kendari adalah ibu kota provinsi sulawesi tenggara. Dengan luas wilayah 296,00 km&sup2; dan jumlah penduduk sebanyak 289,709 jiwa, kota kendari menduduki urutan ke 63 dalam hal kepadatan penduduk dari 93 kota di Indonesia versi wikipedia. Namun menurut saya, walaupun kota kendari masih belum terlalu terjamah oleh euphoria kota kota besar, kota ini harus mempersiapkan diri mau dibawa kemana arah pembangunannya. <a class="more-link" href="https://isikepalakachfi.wordpress.com/2017/03/17/melihat-arah-pembangunan-kota-kendari/#more-515">Continue reading </a></p>\r\n', 'file_1539109882.jpg'),
+(2, 'Kendari miliki potensi usaha pengolahan ikan', '<h1>Kendari miliki potensi usaha pengolahan ikan</h1>\r\n', 'file_1539109965.jpg'),
+(3, 'Pemuda Kota Kendari', '<p><span style="font-family:&quot;georgia&quot;,&quot;times new roman&quot;,serif">Potensi pemuda Kota Kendari cukup tingga mencapai 117.285 jiwa atau 33,75% dari total jumlah penduduk. Rincian lihat tabel dibawah. Untuk itu dibutuhkan program kerja untuk membina karakter soft skill dan life skill pemuda, agar menjadikan manusia yang sehat, cerdas dan produktif kedepan. Setidaknya pemerintah mampu mencetak pemuda yang siap bersaing secara nasional maupun international. Kalau tidak ada program untuk peningkatan kemampuan pemuda, maka pengangguran baru akan tercipta lebih banyak lagi 5 tahun kedepan. </span></p>\r\n', 'file_1539110015.jpg');
 
 -- --------------------------------------------------------
 
@@ -769,7 +813,7 @@ ALTER TABLE `table_link`
 -- AUTO_INCREMENT for table `table_news`
 --
 ALTER TABLE `table_news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `table_newscategory`
 --
@@ -779,7 +823,7 @@ ALTER TABLE `table_newscategory`
 -- AUTO_INCREMENT for table `table_pariwisata`
 --
 ALTER TABLE `table_pariwisata`
-  MODIFY `pariwisata_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pariwisata_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `table_pemerintahan`
 --
@@ -794,12 +838,12 @@ ALTER TABLE `table_pendapatan`
 -- AUTO_INCREMENT for table `table_perangkat`
 --
 ALTER TABLE `table_perangkat`
-  MODIFY `perangkat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `perangkat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `table_potency`
 --
 ALTER TABLE `table_potency`
-  MODIFY `potensi_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `potensi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `table_suggestion`
 --

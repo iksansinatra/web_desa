@@ -59,7 +59,7 @@ class Perangkat extends CI_Controller {
         $data['perangkat_place'] = $this->input->post('perangkat_place');
         $data['perangkat_sk'] = $this->input->post('perangkat_sk');
         $data['perangkat_date'] = $this->input->post('perangkat_date');
-        $data['perangkat_image'] = $this->input->post('perangkat_image');
+        $data['perangkat_image'] = "blank.jpg";
        /*  $data['perangkatcategory_id'] = $this->input->post('perangkatcategory_id'); */
 
 
