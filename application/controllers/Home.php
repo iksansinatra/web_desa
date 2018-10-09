@@ -89,6 +89,12 @@ class Home extends CI_Controller {
     public function index1(){
 
             $data['gambar']=$this->M_gambar->tampil_data_gambar();
+            $data['semua']=$this->M_gambar->tampil_semua_data();
+          //  $data['dusun']=$this->M_gambar->hitung_dusun();
+          //  $data['kaur']=$this->M_gambar->hitung_kaur();
+          //  $data['seksi']=$this->M_gambar->hitung_seksi();
+          //  $data['agama']=$this->M_gambar->hitung_keagamaan();
+            $data['terkini']=$this->M_gambar->tampil_berita_terkini();
 
             $this->load->view("frontend/index.php",$data);
     }

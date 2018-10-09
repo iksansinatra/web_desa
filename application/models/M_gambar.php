@@ -17,6 +17,20 @@ class M_gambar extends CI_Model{
         return $query->result();
     }
 
+
+	public function tampil_semua_data() {
+        $query  = $this->db->query("select * from table_kegiatan");
+        return $query->result();
+    }
+
+
+
+	public function tampil_berita_terkini() {
+        $query  = $this->db->query("select * from table_news GROUP BY news_id DESC limit 6");
+        return $query->result();
+    }
+
+
 	public function edit($data) {
         $this->db->update('gambar', $data, array('id_gambar'=>$data['id_gambar']));
     }
