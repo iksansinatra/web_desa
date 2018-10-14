@@ -32,7 +32,13 @@ class M_berita extends CI_Model{
 
 	public function tampil_data_berita() {
 
-        $query  = $this->db->query("select * from table_news");
+        $query  = $this->db->query("select * from table_news GROUP BY news_id DESC");
+        return $query->result();
+    }
+
+	public function tampil_detail_berita($id) {
+
+        $query  = $this->db->query("select * from table_news where news_id='$id'");
         return $query->result();
     }
 

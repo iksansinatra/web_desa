@@ -12,6 +12,11 @@ class Home extends CI_Controller {
     		$this->load->model("M_video");
         $this->load->model("M_agenda");
 		    $this->load->model("M_potensi");
+		    $this->load->model("M_visi");
+		    $this->load->model("M_sejarah_desa");
+		    $this->load->model("M_sejarah_pemerintahan");
+		    $this->load->model("M_perangkat");
+		    $this->load->model("M_fasilitas");
         $this->load->library("pagination");
     }
 
@@ -23,14 +28,33 @@ class Home extends CI_Controller {
     public function berita(){
 // >>>>>>> b4026377b3286271e3586e69e5bca5f0e9dae805
 
-      $data['berita']=$this->M_notif->tampil_data_penerima();
-      $this->load->view("berita",$data);
+      $data['berita']=$this->M_berita->tampil_data_berita();
+      $this->load->view("frontend/berita",$data);
     }
 
-    public function pengumuman(){
+    public function visi(){
 
-      $data['pengumuman']=$this->M_pengumuman->tampil_data_pengumuman();
-      $this->load->view("pengumuman1",$data);
+      $data['visi']=$this->M_visi->tampil_data_visi();
+      $this->load->view("frontend/visi",$data);
+    }
+
+    public function sejarah_desa(){
+
+      $data['sejarah']=$this->M_sejarah_desa->tampil_data_desa();
+      $data['sejarah1']=$this->M_sejarah_pemerintahan->tampil_data_pemerintahan();
+      $this->load->view("frontend/sejarah_desa",$data);
+    }
+
+    public function perangkat(){
+
+      $data['perangkat']=$this->M_perangkat->tampil_data_perangkat();
+      $this->load->view("frontend/perangkat",$data);
+    }
+
+    public function fasilitas(){
+
+      $data['fasilitas']=$this->M_fasilitas->tampil_data_fasilitas();
+      $this->load->view("frontend/fasilitas",$data);
     }
 
     public function agenda(){
@@ -39,10 +63,11 @@ class Home extends CI_Controller {
       $this->load->view("agenda1",$data);
     }
 
-    public function agenda1(){
+    public function detail_berita(){
       $id=$this->input->get('id');
-      $data['agenda']=$this->M_agenda->tampil_data_agenda1($id);
-      $this->load->view("beranda3",$data);
+      $data['berita']=$this->M_berita->tampil_detail_berita($id);
+      $data['terkini']=$this->M_gambar->tampil_berita_terkini();
+      $this->load->view("frontend/detail_berita",$data);
     }
 
     public function berita1(){

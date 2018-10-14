@@ -27,14 +27,14 @@
                   </span>
                 </a>
                 <ul class="treeview-menu">
-                  <li class="active"><a href="<?php echo site_url('visi')?>">
+                  <!--li class="active"><a href="<?php echo site_url('visi')?>">
                     <i class="fa fa-newspaper-o text-red"></i><span>Visi & Misi</span>
                   </a>
-                </li>
+                </li-->
                 <li class="treeview">
                 <a href="#" >
                     <i class="fa fa-history text-yellow"></i><span>Sejarah Desa</span>
-          <span class="pull-right-container">
+                      <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
                   </a>
