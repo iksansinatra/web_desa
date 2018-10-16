@@ -24,8 +24,8 @@ class Video extends CI_Controller {
        $this->load->library('upload');
 	   $nmfile                  = "vid-" . date('YmdHis');
     $config['upload_path']   = './assets/video/';
-    $config['allowed_types'] = 'wmv|wav|mp4|3gp|flv'; 
-    $config['max_size']      = '102400'; 
+    $config['allowed_types'] = 'wmv|wav|mp4|3gp|flv|mkv|MKV';
+    $config['max_size']      = '102400';
     $config['file_name']     = $nmfile;
        // $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
        // $config['upload_path'] = './assets/video/'; //path folder
@@ -43,7 +43,7 @@ class Video extends CI_Controller {
             {
                 $gbr = $this->upload->data();
                 $data = array(
-               
+
 				'video_file' =>$gbr['file_name'],
                   'video_name' =>$this->input->post('video_name'),
 				  'video_desc' =>$this->input->post('video_desc'),
@@ -67,13 +67,13 @@ class Video extends CI_Controller {
     }
 
     public function edit() {
-      
+
         //get data
         $this->load->library('upload');
 		// unlink('./assets/video/' . $this->input->post('video_file'));
     $nmfile                  = "vid-" . date('YmdHis');
     $config['upload_path']   = './assets/video/';
-    $config['allowed_types'] = 'wmv|wav|mp4|3gp|flv';
+    $config['allowed_types'] = 'wmv|wav|mp4|3gp|flv|mkv|MKV';
     $config['max_size']      = '102400';
     $config['file_name']     = $nmfile;
         // $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time

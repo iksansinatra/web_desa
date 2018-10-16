@@ -12,6 +12,7 @@ class Home extends CI_Controller {
     		$this->load->model("M_video");
         $this->load->model("M_agenda");
 		    $this->load->model("M_potensi");
+		    $this->load->model("M_pariwisata");
 		    $this->load->model("M_visi");
 		    $this->load->model("M_sejarah_desa");
 		    $this->load->model("M_sejarah_pemerintahan");
@@ -38,6 +39,29 @@ class Home extends CI_Controller {
       $this->load->view("frontend/visi",$data);
     }
 
+    public function kegiatan(){
+
+      $data['kegiatan']=$this->M_gambar->tampil_semua_data();
+      $this->load->view("frontend/kegiatan",$data);
+    }
+
+    public function potensi(){
+
+      $data['potensi']=$this->M_potensi->tampil_data_potensi();
+      $this->load->view("frontend/potensi",$data);
+    }
+
+    public function pariwisata(){
+
+      $data['pariwisata']=$this->M_pariwisata->tampil_data_pariwisata();
+      $this->load->view("frontend/pariwisata",$data);
+    }
+
+    public function kontak(){
+
+      $this->load->view("frontend/kontak");
+    }
+
     public function sejarah_desa(){
 
       $data['sejarah']=$this->M_sejarah_desa->tampil_data_desa();
@@ -57,6 +81,170 @@ class Home extends CI_Controller {
       $this->load->view("frontend/fasilitas",$data);
     }
 
+    public function foto(){
+/*
+      #set Limit
+      if ($this->uri->segment(3) != "") {
+        $limit = $this->uri->segment(3);
+      } else {
+        $limit = 3;
+      }
+
+      #Config for pagination...
+      $config                = array();
+      $config["base_url"]    = base_url() . "index.php/Home/foto/" . $limit;
+      $config["total_rows"]  = $this->M_foto->record_count();
+      $config["per_page"]    = $limit;
+      $config["uri_segment"] = 4;
+
+      #Config css for pagination...
+      $config['full_tag_open']   = '<ul class="pagination">';
+      $config['full_tag_close']  = '</ul>';
+      $config['first_link']      = "First";
+      $config['last_link']       = "Last";
+      $config['first_tag_open']  = '<li>';
+      $config['first_tag_close'] = '</li>';
+      $config['prev_link']       = '&laquo';
+      $config['prev_tag_open']   = '<li class="prev">';
+      $config['prev_tag_close']  = '</li>';
+      $config['next_link']       = '&raquo';
+      $config['next_tag_open']   = '<li>';
+      $config['next_tag_close']  = '</li>';
+      $config['last_tag_open']   = '<li>';
+      $config['last_tag_close']  = '</li>';
+      $config['cur_tag_open']    = '<li class="active"><a href="#">';
+      $config['cur_tag_close']   = '</a></li>';
+      $config['num_tag_open']    = '<li>';
+      $config['num_tag_close']   = '</li>';
+
+      #Check Page in Segement 3...
+      if ($this->uri->segment(4) == "") {
+        $data['number'] = 0;
+      } else {
+        $data['number'] = $this->uri->segment(4);
+      }
+
+      #Generate Pagination...
+      $this->pagination->initialize($config);
+      $page           = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+      $data["foto"]   = $this->M_foto->fetch_user($config["per_page"], $page);
+      $data["column"] = $this->M_foto->select_column_name($this->db->database);
+      $data["links"]  = $this->pagination->create_links();
+*/
+      $data['foto']=$this->M_foto->tampil_data_foto1();
+      $this->load->view("frontend/foto",$data);
+    }
+
+
+    public function foto_kegiatan(){
+/*
+      #set Limit
+      if ($this->uri->segment(3) != "") {
+        $limit = $this->uri->segment(3);
+      } else {
+        $limit = 3;
+      }
+
+      #Config for pagination...
+      $config                = array();
+      $config["base_url"]    = base_url() . "index.php/Home/foto/" . $limit;
+      $config["total_rows"]  = $this->M_foto->record_count();
+      $config["per_page"]    = $limit;
+      $config["uri_segment"] = 4;
+
+      #Config css for pagination...
+      $config['full_tag_open']   = '<ul class="pagination">';
+      $config['full_tag_close']  = '</ul>';
+      $config['first_link']      = "First";
+      $config['last_link']       = "Last";
+      $config['first_tag_open']  = '<li>';
+      $config['first_tag_close'] = '</li>';
+      $config['prev_link']       = '&laquo';
+      $config['prev_tag_open']   = '<li class="prev">';
+      $config['prev_tag_close']  = '</li>';
+      $config['next_link']       = '&raquo';
+      $config['next_tag_open']   = '<li>';
+      $config['next_tag_close']  = '</li>';
+      $config['last_tag_open']   = '<li>';
+      $config['last_tag_close']  = '</li>';
+      $config['cur_tag_open']    = '<li class="active"><a href="#">';
+      $config['cur_tag_close']   = '</a></li>';
+      $config['num_tag_open']    = '<li>';
+      $config['num_tag_close']   = '</li>';
+
+      #Check Page in Segement 3...
+      if ($this->uri->segment(4) == "") {
+        $data['number'] = 0;
+      } else {
+        $data['number'] = $this->uri->segment(4);
+      }
+
+      #Generate Pagination...
+      $this->pagination->initialize($config);
+      $page           = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+      $data["foto"]   = $this->M_foto->fetch_user($config["per_page"], $page);
+      $data["column"] = $this->M_foto->select_column_name($this->db->database);
+      $data["links"]  = $this->pagination->create_links();
+*/
+      $data['foto']=$this->M_foto_kegiatan->tampil_data_foto();
+      $this->load->view("frontend/foto_kegiatan",$data);
+    }
+
+
+    public function video(){
+/*
+      #set Limit
+      if ($this->uri->segment(3) != "") {
+        $limit = $this->uri->segment(3);
+      } else {
+        $limit = 3;
+      }
+
+      #Config for pagination...
+      $config                = array();
+      $config["base_url"]    = base_url() . "index.php/Home/foto/" . $limit;
+      $config["total_rows"]  = $this->M_foto->record_count();
+      $config["per_page"]    = $limit;
+      $config["uri_segment"] = 4;
+
+      #Config css for pagination...
+      $config['full_tag_open']   = '<ul class="pagination">';
+      $config['full_tag_close']  = '</ul>';
+      $config['first_link']      = "First";
+      $config['last_link']       = "Last";
+      $config['first_tag_open']  = '<li>';
+      $config['first_tag_close'] = '</li>';
+      $config['prev_link']       = '&laquo';
+      $config['prev_tag_open']   = '<li class="prev">';
+      $config['prev_tag_close']  = '</li>';
+      $config['next_link']       = '&raquo';
+      $config['next_tag_open']   = '<li>';
+      $config['next_tag_close']  = '</li>';
+      $config['last_tag_open']   = '<li>';
+      $config['last_tag_close']  = '</li>';
+      $config['cur_tag_open']    = '<li class="active"><a href="#">';
+      $config['cur_tag_close']   = '</a></li>';
+      $config['num_tag_open']    = '<li>';
+      $config['num_tag_close']   = '</li>';
+
+      #Check Page in Segement 3...
+      if ($this->uri->segment(4) == "") {
+        $data['number'] = 0;
+      } else {
+        $data['number'] = $this->uri->segment(4);
+      }
+
+      #Generate Pagination...
+      $this->pagination->initialize($config);
+      $page           = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+      $data["foto"]   = $this->M_foto->fetch_user($config["per_page"], $page);
+      $data["column"] = $this->M_foto->select_column_name($this->db->database);
+      $data["links"]  = $this->pagination->create_links();
+*/
+      $data['video']=$this->M_video->tampil_data_video();
+      $this->load->view("frontend/video",$data);
+    }
+
     public function agenda(){
 
       $data['agenda']=$this->M_agenda->tampil_data_agenda();
@@ -68,6 +256,20 @@ class Home extends CI_Controller {
       $data['berita']=$this->M_berita->tampil_detail_berita($id);
       $data['terkini']=$this->M_gambar->tampil_berita_terkini();
       $this->load->view("frontend/detail_berita",$data);
+    }
+
+    public function detail_potensi(){
+      $id=$this->input->get('id');
+      $data['potensi']=$this->M_potensi->tampil_detail_potensi($id);
+      $data['potensi1']=$this->M_potensi->tampil_data_potensi();
+      $this->load->view("frontend/detail_potensi",$data);
+    }
+
+    public function detail_pariwisata(){
+      $id=$this->input->get('id');
+      $data['pariwisata']=$this->M_pariwisata->tampil_detail_pariwisata($id);
+      $data['pariwisata1']=$this->M_pariwisata->tampil_data_pariwisata();
+      $this->load->view("frontend/detail_pariwisata",$data);
     }
 
     public function berita1(){

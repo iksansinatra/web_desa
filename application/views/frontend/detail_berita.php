@@ -150,19 +150,19 @@
 										<a href="<?php echo site_url('Home/visi');?>">Visi & Misi</a>
 									</li>
 									<li>
-										<a href="about2.html">Sejarah Desa</a>
+										<a href="<?php echo site_url('Home/sejarah_desa');?>">Sejarah Desa</a>
 									</li>
 									<li>
-										<a href="about3.html">Perangkat Desa</a>
+										<a href="<?php echo site_url('Home/perangkat');?>">Perangkat Desa</a>
 									</li>
 									<li>
-										<a href="history.html">Demografi Penduduk</a>
+										<a href="#">Demografi Penduduk</a>
 									</li>
 									<li>
-										<a href="career.html">Fasilitas Desa</a>
+										<a href="<?php echo site_url('Home/fasilitas');?>">Fasilitas Desa</a>
 									</li>
 									<li>
-										<a href="partnerships.html">Anggaran Desa</a>
+										<a href="#">Anggaran Desa</a>
 									</li>
 
 								</ul>
@@ -172,40 +172,20 @@
 								<span class="submenu-button"></span>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="services.html">All Services</a>
+										<a href="<?php echo site_url('Home/berita');?>">Berita Desa</a>
 									</li>
 									<li>
-										<a href="services-details.html">Services Details</a>
+										<a href="<?php echo site_url('Home/kegiatan');?>">Kegiatan Desa</a>
 									</li>
 
 								</ul>
 							</li>
 							<li>
-								<a href="javascript:avoid(0);">Pariwisata</a>
-								<span class="submenu-button"></span>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="project.html">project</a>
-									</li>
-
-									<li>
-										<a href="project-details.html">Projec Details</a>
-									</li>
-
-								</ul>
+								<a href="<?php echo site_url('Home/pariwisata');?>">Pariwisata</a>
 							</li>
 
 							<li>
-								<a href="javascript:avoid(0);">Potensi</a>
-								<span class="submenu-button"></span>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="blog.html">Blog</a>
-									</li>
-									<li>
-										<a href="blog-detail.html">Blog Details</a>
-									</li>
-								</ul>
+								<a href="<?php echo site_url('Home/potensi');?>">Potensi</a>
 							</li>
 
 							<li>
@@ -213,50 +193,22 @@
 								<span class="submenu-button"></span>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="portfolio-masonry.html">Gallery Masonry</a>
+										<a href="<?php echo site_url('Home/foto');?>">Foto Desa</a>
 									</li>
 									<li>
-										<a href="portfolio-grid.html">Gallery Grid</a>
+										<a href="<?php echo site_url('Home/foto_kegiatan');?>">Foto Kegiatan</a>
 									</li>
 									<li>
-										<a href="team.html">Team</a>
+										<a href="<?php echo site_url('Home/video');?>">Video Desa</a>
 									</li>
 
-									<li>
-										<a href="pricing.html">pricing</a>
-									</li>
-									<li>
-										<a href="faq.html">Faq</a>
-									</li>
-									<li>
-										<a href="register.html">Register</a>
-									</li>
-									<li>
-										<a href="login.html">login</a>
-									</li>
-									<li>
-										<a href="testimonial.html">Testimonials</a>
-									</li>
-									<li>
-										<a href="404.html">404 Error</a>
-									</li>
-									<li>
-										<a href="blank.html">blank</a>
-									</li>
+
 								</ul>
 							</li>
 
 							<li>
-								<a href="#!">Contact us</a>
-								<span class="submenu-button"></span>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="contact.html">contact</a>
-									</li>
-									<li>
-										<a href="contact1.html">contact 2</a>
-									</li>
-								</ul>
+								<a href="<?php echo site_url('Home/kontak');?>">Kontak Kami</a>
+
 							</li>
 						</ul>
 					</div>
@@ -377,7 +329,7 @@
 							<div class="project-item">
 								<div class="about-block clearfix">
 									<figure>
-										<a href="<?php echo base_url();?>assets/berita/<?php echo $key3->news_image;?>"><img class="img-responsive" src="<?php echo base_url();?>assets/berita/<?php echo $key3->news_image;?>" alt="Photo"></a>
+										<a href="<?php echo base_url();?>assets/berita/<?php echo $key3->news_image;?>"><img class="img-responsive" src="<?php echo base_url();?>assets/berita/<?php echo $key3->news_image;?>" alt="Photo" height="200"></a>
 									</figure>
 									<div class="text-box mt-25">
 										<div class="box-title mb-15">

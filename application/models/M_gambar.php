@@ -19,7 +19,7 @@ class M_gambar extends CI_Model{
 
 
 	public function tampil_semua_data() {
-        $query  = $this->db->query("select * from table_kegiatan");
+        $query  = $this->db->query("select * from table_kegiatan GROUP BY image_id DESC");
         return $query->result();
     }
 

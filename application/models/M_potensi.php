@@ -34,6 +34,11 @@ class M_potensi extends CI_Model{
         return $query->result();
     }
 
+	public function tampil_detail_potensi($id) {
+        $query  = $this->db->query("select * from table_potency where potensi_id='$id'");
+        return $query->result();
+    }
+
 	public function edit($data) {
         $this->db->update('table_potency', $data, array('potensi_id'=>$data['potensi_id']));
     }
