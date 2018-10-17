@@ -163,6 +163,7 @@ return array(
 	'jar'	=>	array('application/java-archive', 'application/x-java-application', 'application/x-jar', 'application/x-compressed'),
 	'svg'	=>	array('image/svg+xml', 'application/xml', 'text/xml'),
 	'vcf'	=>	'text/x-vcard',
+	'mkv'   =>  'application/x-matroska',
 	'srt'	=>	array('text/srt', 'text/plain'),
 	'vtt'	=>	array('text/vtt', 'text/plain'),
 	'ico'	=>	array('image/x-icon', 'image/x-ico', 'image/vnd.microsoft.icon'),

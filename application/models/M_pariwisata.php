@@ -34,6 +34,11 @@ class M_pariwisata extends CI_Model{
         return $query->result();
     }
 
+	public function tampil_detail_pariwisata($id) {
+        $query  = $this->db->query("select * from table_pariwisata where pariwisata_id='$id'");
+        return $query->result();
+    }
+
 	public function edit($data) {
         $this->db->update('table_pariwisata', $data, array('pariwisata_id'=>$data['pariwisata_id']));
     }
