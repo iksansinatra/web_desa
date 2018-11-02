@@ -165,6 +165,7 @@
             <i class="fa fa-home"></i> <span>Kontak</span>
           </a>
       </li>
+      <?php if ('group_id'==1){?>
   <li class="">
       <a href="<?php echo site_url('user')?>">
       <i class="menu-icon fa fa-users"></i>
@@ -172,6 +173,8 @@
       </a>
       <b class="arrow"></b>
     </li>
+  <?php }
+    ?>
       </ul>
     </section>
     <!-- /.sidebar -->

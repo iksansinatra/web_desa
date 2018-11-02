@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09 Okt 2018 pada 20.39
+-- Generation Time: 22 Okt 2018 pada 16.20
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -505,7 +505,7 @@ CREATE TABLE IF NOT EXISTS `table_user` (
   `user_password` varchar(200) NOT NULL,
   `user_fullname` varchar(255) NOT NULL,
   `group_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `table_user`
@@ -515,7 +515,8 @@ INSERT INTO `table_user` (`user_id`, `user_name`, `user_password`, `user_fullnam
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '192.168.1.1', 1),
 (3, 'ivan', '2c42e5cf1cdbafea04ed267018ef1511', 'asgh', 2),
 (4, 'admin', 'cacd5ea564694b0eefd8df909822f18a', 'cdvc', 1),
-(5, 'iksan', '4edd2c92ddf876f150b4fe8360a4d0da', 'iksan sinatra', 2);
+(5, 'iksan', '4edd2c92ddf876f150b4fe8360a4d0da', 'iksan sinatra', 2),
+(6, 'iksan', '8ee93a29a3f16e768bd7d2c4e8403b22', 'iksan sinatra', 2);
 
 -- --------------------------------------------------------
 
@@ -863,7 +864,7 @@ ALTER TABLE `table_topografi`
 -- AUTO_INCREMENT for table `table_user`
 --
 ALTER TABLE `table_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `table_userprofile`
 --

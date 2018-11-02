@@ -11,7 +11,7 @@ class M_login extends CI_Model{
     public function login($data) {
         $this->db->where('user_name', $data['user_name']);
         $this->db->where('user_password', $data['user_password']);
-        $this->db->where('group_id', 1);
+        // $this->db->where('group_id', 1);
         return $this->db->get('table_user')->row();
     }
 

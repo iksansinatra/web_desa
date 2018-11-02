@@ -337,6 +337,7 @@ class Home extends CI_Controller {
                             $data = array(
                                 'userid' => $result->user_id,
                                 'user_name' => $result->user_name,
+                                'user_fullname' => $result->user_fullname,
                                 'group_id' => $result->group_id,
                             );
 
@@ -355,6 +356,41 @@ class Home extends CI_Controller {
         $this->session->sess_destroy();
         redirect('Home');
     }
+  //     public function login() {
+  //   #Cek apakah kegiatan post di lakukan
+  //   if ($_POST) {
+  //     #Inisialisasi username & password ke variabel $data
+  //     $data['user_name'] = $this->input->post('user_name');
+  //     $data['user_password'] = md5($this->input->post('user_password'));
+
+  //     #Cek ke model apakah data inisialisasi ada dalam database
+  //     $result           = $this->m_login->login($data);
+  //     if (!empty($result)) { #Jika data ada
+  //       #Buat array untuk menampung value kedalam session
+  //       $data = array(
+  //         'user_id' => $result->user_id,
+  //         'user_name' => $result->user_name,
+  //         'user_fullname' => $result->user_fullname,
+  //         'user_status' => $result->user_status
+  //       );
+  //       #Set value ke session
+  //       $this->session->set_userdata($data);
+  //       #Alihkan
+  //       redirect('../');
+  //     } else { #Jika tidak ada
+  //       #Kirim pesan jika value salah
+  //       $this->session->set_flashdata('login', 'Username atau password salah!');
+  //       #Alihkan
+  //       redirect('../');
+  //     }
+  //   }
+  // }
+
+  // public function logout() {
+  //   $this->session->sess_destroy();
+  //   redirect('' . base_url());
+  // }
+
 
 }
 ?>
