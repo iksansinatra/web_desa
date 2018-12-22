@@ -65,8 +65,8 @@
                     <th style="width: 10px">No</th>
                     <th>Berita</th>
                     <th>Keterangan</th>
+                    <th>Tanggal</th>
                     <th>Penulis</th>
-					<th>Tanggal</th>
                     <th>Gambar</th>
 
                     <th style="width: 50px">Aksi</th>

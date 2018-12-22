@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Chillclean - Cleaning Services HTML5 Bootstrap4 Responsive Template</title>
+		<title>Beranda / Desa Laywo Jaya</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<!--link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet"-->
 		<link href="<?php echo base_url()?>assets/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -58,7 +58,7 @@
 				<div class="row">
 					<div class="col-sm-7">
 						<p>
-							Welcome to our corporate buisness
+							Welcome to our website
 						</p>
 					</div>
 					<div class="col-sm-5">
@@ -103,23 +103,23 @@
 								<li>
 									<i class="fa fa-map-marker"></i>
 									<p>
-										13005 Greenvile Avenue
-										<span> California, TX 70240</span>
+										<!-- 13005 Greenvile Avenue
+										<span> California, TX 70240</span> -->
 									</p>
 								</li>
 								<li>
 									<i class="fa fa-phone"></i>
 									<p>
-										Call Us
-										<span> +56 (0) 012 345 6789</span>
+										<!-- Call Us
+										<span> +56 (0) 012 345 6789</span> -->
 									</p>
 								</li>
 								<li>
 									<i class="fa fa-envelope" aria-hidden="true"></i>
 									<p>
-										Mail Us
+										<!-- Mail Us -->
 										<span>
-											<a href="mailto:info@gmail.com">info@gmail.com</a>
+											<!-- <a href="mailto:info@gmail.com">info@gmail.com</a> -->
 										</span>
 									</p>
 								</li>
@@ -259,7 +259,7 @@
 							data-splitout="none"
 							data-responsive_offset="on" >
 								<div class="banner-text">
-									<span class="sub-text">we are here to help you</span>
+									<!-- <span class="sub-text">we are here to help you</span> -->
 									<h2><?php echo $key->image_name;?></h2>
 									<p>
 										<?php echo $key->image_desc;?>
@@ -293,10 +293,10 @@
 
 					<div class="col-md-8 mt-xs-30 text-center text-md-left">
 						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text.
+							<!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text. -->
 						</p>
 						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text.
+							<!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text. -->
 						</p>
 					</div>
 				</div>
@@ -315,7 +315,7 @@
 							<h2>Kegiatan Desa</h2>
 							<span class="b-line"></span>
 							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
+								<!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text. -->
 							</p>
 						</div>
 					</div>
@@ -364,8 +364,8 @@
 							<h2>Perangkat Desa</h2>
 							<span class="b-line"></span>
 							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
-							</p>
+								<!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
+ -->							</p>
 						</div>
 					</div>
 				</div>
@@ -432,7 +432,7 @@
 							<h2>Berita Terkini</h2>
 							<span class="b-line"></span>
 							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
+								<!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text. -->
 							</p>
 						</div>
 					</div>
@@ -472,7 +472,7 @@
 
 
 		<footer class="footer pt-50">
-			<div class="container">
+			<!-- <div class="container">
 				<div class="row">
 					<div class="col-md-6 col-lg-3 footer_logo">
 						<a href="index.html"><img src="assets/images/footer_logo.png" alt=""></a>
@@ -546,7 +546,7 @@
 					</div>
 
 				</div>
-			</div>
+			</div> -->
 			<div class="bottom-footer text-center">
 				<div class="container">
 					<div class="bor_top clearfix">
