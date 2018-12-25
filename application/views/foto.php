@@ -73,7 +73,7 @@
                     <td><?php echo $no; ?></td>
                     <td><?php echo $key->image_name;?></td>
                     <td><?php echo $key->image_desc;?></td>
-					<td><a href="" data-toggle="modal" data-target="#imageModal<?php echo $id;?>"><img src="<?php echo base_url()?>/assets/foto/<?php echo $key->image_file;?>" width="100" height="100"></a></td>
+					          <td><a href="" data-toggle="modal" data-target="#imageModal<?php echo $id;?>"><img src="<?php echo base_url()?>/assets/foto/<?php echo $key->image_file;?>" width="100" height="100"></a></td>
                     <td>
 
                       <button type="button" class="btn btn-xs btn-success" title="Edit Foto Desa" data-toggle="modal" data-target="#edit<?php echo $id;?>"><i class="fa fa-edit"></i></button>
@@ -94,7 +94,7 @@
                                  <center><img src="<?php echo base_url()?>assets/foto/<?php echo $key->image_file;?>" height="300px" width="300px"></center>
                               </div>
                             </div>
-                             
+
                           </div>
                         </div>
                       </div>
@@ -121,7 +121,7 @@
                                   <?php echo $key->image_desc;?>
                                 </textarea>
                             </div>
-							<div class="form-group">
+							              <div class="form-group">
                               <label for="password">File</label>
                                 <input type="file" class="form-control" id="password" placeholder="Foto"  name="gambar" >
                             </div>

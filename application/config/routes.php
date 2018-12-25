@@ -51,6 +51,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Home/index1';
 $route['404_override'] = '';
+$route['visi-desa'] = 'Home/visi';
+$route['sejarah-desa'] = 'Home/sejarah_desa';
+$route['perangkat-desa'] = 'Home/perangkat';
+$route['fasilitas-desa'] = 'Home/fasilitas';
+$route['anggaran-desa'] = 'Home/anggaran';
+$route['berita-desa'] = 'Home/berita';
+$route['kegiatan-desa'] = 'Home/kegiatan';
+$route['pariwisata-desa'] = 'Home/pariwisata';
+$route['potensi-desa'] = 'Home/potensi';
+$route['foto-desa'] = 'Home/foto';
+$route['foto-kegiatan-desa'] = 'Home/foto_kegiatan';
+$route['video-desa'] = 'Home/video';
+$route['kontak-desa'] = 'Home/kontak';
+$route['detail-berita-desa'] = 'Home/detail_berita';
+$route['detail-pariwisata-desa'] = 'Home/detail_pariwisata';
+$route['detail-potensi-desa'] = 'Home/detail_potensi';
+
 $route['translate_uri_dashes'] = TRUE;
 
 /*

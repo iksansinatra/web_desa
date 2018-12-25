@@ -64,7 +64,7 @@
                     <th>Pendapatan Asli Desa</th>
                     <th>Dana Desa</th>
                     <th>Alokasi Dana Desa</th>
-                    <th>Bantuan Keungan</th>
+                    <th>Bantuan Keuangan</th>
                     <th>Total Pendapatan</th>
                     <th style="width: 50px">Aksi</th>
                   </tr>
