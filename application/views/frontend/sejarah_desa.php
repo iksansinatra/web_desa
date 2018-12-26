@@ -24,22 +24,22 @@
 							<div class="special-links">
 								<ul>
 									<li>
-										<a  href="<?php echo site_url('Home/visi');?>">Visi & Misi</a>
+										<a href="<?php echo site_url('visi-desa');?>">Visi & Misi</a>
 									</li>
 									<li>
-										<a class="active" href="<?php echo site_url('Home/sejarah_desa');?>">Sejarah Desa</a>
+										<a  class="active"  href="<?php echo site_url('sejarah-desa');?>">Sejarah Desa</a>
 									</li>
 									<li>
-										<a href="<?php echo site_url('Home/perangkat');?>">Perangkat Desa</a>
+										<a href="<?php echo site_url('perangkat-desa');?>">Perangkat Desa</a>
 									</li>
 									<li>
-										<a href="<?php echo site_url('Home/fasilitas');?>">Fasilitas Desa</a>
+										<a href="<?php echo site_url('fasilitas-desa');?>">Fasilitas Desa</a>
 									</li>
 									<li>
-										<a href="<?php echo site_url('Home/anggaran');?>">Anggaran Desa</a>
+										<a href="<?php echo site_url('anggaran-desa');?>">Anggaran Desa</a>
 									</li>
 									<li>
-										<a href="<?php echo site_url('Home/penduduk');?>">Demografi Penduduk</a>
+										<a href="<?php echo site_url('demografi-desa');?>">Demografi Penduduk</a>
 									</li>
 								</ul>
 							</div>

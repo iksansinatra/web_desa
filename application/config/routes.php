@@ -64,6 +64,7 @@ $route['foto-desa'] = 'Home/foto';
 $route['foto-kegiatan-desa'] = 'Home/foto_kegiatan';
 $route['video-desa'] = 'Home/video';
 $route['kontak-desa'] = 'Home/kontak';
+$route['demografi-desa'] = 'Home/penduduk';
 $route['detail-berita-desa'] = 'Home/detail_berita';
 $route['detail-pariwisata-desa'] = 'Home/detail_pariwisata';
 $route['detail-potensi-desa'] = 'Home/detail_potensi';

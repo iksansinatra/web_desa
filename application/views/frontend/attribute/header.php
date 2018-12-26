@@ -75,7 +75,7 @@
 
 							<a href="<?php echo base_url();?>">
 								<img width="65px" src="<?php echo base_url()?>assets/assets/images/icon.png" alt="Logo">
-								</a>			
+								</a>
 								 <div class="navbar-header">
 						<button type="button" class="navbar-toggle hidden-lg-up" data-toggle="collapse" data-target="#navbar-menu">
 							<i class="fa fa-bars"></i>
@@ -145,7 +145,7 @@
 										<a href="<?php echo site_url('perangkat-desa');?>">Perangkat Desa</a>
 									</li>
 									<li>
-										<a href="<?php echo site_url('home/penduduk');?>">Demografi Penduduk</a>
+										<a href="<?php echo site_url('demografi-desa');?>">Demografi Penduduk</a>
 									</li>
 									<li>
 										<a href="<?php echo site_url('fasilitas-desa');?>">Fasilitas Desa</a>
