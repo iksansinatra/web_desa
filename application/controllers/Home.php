@@ -20,6 +20,8 @@ class Home extends CI_Controller {
 		    $this->load->model("M_fasilitas");
 		    $this->load->model("M_belanja");
 		    $this->load->model("M_pendapatan");
+        $this->load->model("M_jenis");
+        $this->load->model("M_usia");
         $this->load->library("pagination");
     }
 
@@ -51,6 +53,15 @@ class Home extends CI_Controller {
       $data['pendapatan']=$this->M_pendapatan->tampil_data_pendapatan();
       $this->load->view("frontend/attribute/header.php");
       $this->load->view("frontend/anggaran",$data);
+      $this->load->view("frontend/attribute/footer.php");
+    }
+
+    public function penduduk(){
+
+      $data['jenis']=$this->M_jenis->tampil_data_jenis();
+      $data['usia']=$this->M_usia->tampil_data_usia();
+      $this->load->view("frontend/attribute/header.php");
+      $this->load->view("frontend/penduduk",$data);
       $this->load->view("frontend/attribute/footer.php");
     }
 

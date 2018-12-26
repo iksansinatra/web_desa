@@ -45,17 +45,17 @@ class User extends CI_Controller {
           $data['user_id']       = $this->input->post('user_id');
           $data['user_name']     = $this->input->post('user_name');
           $data['user_fullname'] = $this->input->post('user_fullname');
-          $data['user_status']   = $this->input->post('user_status');
+          $data['group_id']   = $this->input->post('group_id');
           $data['user_password'] = md5($confirmpassword);
-          $this->m_user->edit($data);
+          $this->M_user->edit($data);
         }
       }
     } else {
       $data['user_id']       = $this->input->post('user_id');
       $data['user_name']     = $this->input->post('user_name');
       $data['user_fullname'] = $this->input->post('user_fullname');
-      $data['user_status']   = $this->input->post('user_status');
-      $this->m_user->edit($data);
+      $data['group_id']   = $this->input->post('group_id');
+      $this->M_user->edit($data);
     }
     redirect('user');
     }
@@ -65,7 +65,7 @@ class User extends CI_Controller {
         if($this->input->post('user_id')!="") {
             $this->M_user->delete($this->input->post('user_id'));
         }
-        redirect('User');
+        redirect('user');
     }
 }
 ?>

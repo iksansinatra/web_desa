@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2018 at 04:33 PM
+-- Generation Time: Dec 26, 2018 at 06:08 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -159,6 +159,27 @@ CREATE TABLE `table_image` (
 INSERT INTO `table_image` (`image_id`, `image_name`, `image_desc`, `image_file`) VALUES
 (18, 'Penimbunan', 'Penimbunan lahan desa untuk mendirikan bangunan', 'file_1538669068.jpeg'),
 (19, 'Drainase', 'Drainase', 'file_1538669116.jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `table_jenis`
+--
+
+CREATE TABLE `table_jenis` (
+  `jenis_id` int(11) NOT NULL,
+  `jenis_name` varchar(200) NOT NULL,
+  `jenis_jiwa` varchar(200) NOT NULL,
+  `jenis_persen` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `table_jenis`
+--
+
+INSERT INTO `table_jenis` (`jenis_id`, `jenis_name`, `jenis_jiwa`, `jenis_persen`) VALUES
+(1, 'Laki-Laki', '95', '54,60'),
+(2, 'Perempuan', '79', '45,40');
 
 -- --------------------------------------------------------
 
@@ -483,8 +504,8 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`user_id`, `user_name`, `user_password`, `user_fullname`, `group_id`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '192.168.1.1', 1),
-(6, 'iksan', '8ee93a29a3f16e768bd7d2c4e8403b22', 'iksan sinatra', 2);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin Laywo', 1),
+(6, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'User Laywo', 2);
 
 -- --------------------------------------------------------
 
@@ -502,6 +523,27 @@ CREATE TABLE `table_userprofile` (
   `group_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `table_usia`
+--
+
+CREATE TABLE `table_usia` (
+  `usia_id` int(11) NOT NULL,
+  `usia_name` varchar(200) NOT NULL,
+  `usia_jiwa` varchar(200) NOT NULL,
+  `usia_persen` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `table_usia`
+--
+
+INSERT INTO `table_usia` (`usia_id`, `usia_name`, `usia_jiwa`, `usia_persen`) VALUES
+(1, '0 - 16 Tahun', '71', '40,80'),
+(2, '17 Tahun Keatas', '103', '59,20');
 
 -- --------------------------------------------------------
 
@@ -582,6 +624,12 @@ ALTER TABLE `table_groups`
 --
 ALTER TABLE `table_image`
   ADD PRIMARY KEY (`image_id`);
+
+--
+-- Indexes for table `table_jenis`
+--
+ALTER TABLE `table_jenis`
+  ADD PRIMARY KEY (`jenis_id`);
 
 --
 -- Indexes for table `table_jobs`
@@ -698,6 +746,12 @@ ALTER TABLE `table_userprofile`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `table_usia`
+--
+ALTER TABLE `table_usia`
+  ADD PRIMARY KEY (`usia_id`);
+
+--
 -- Indexes for table `table_video`
 --
 ALTER TABLE `table_video`
@@ -756,6 +810,12 @@ ALTER TABLE `table_image`
   MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
+-- AUTO_INCREMENT for table `table_jenis`
+--
+ALTER TABLE `table_jenis`
+  MODIFY `jenis_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `table_jobs`
 --
 ALTER TABLE `table_jobs`
@@ -795,7 +855,7 @@ ALTER TABLE `table_link`
 -- AUTO_INCREMENT for table `table_news`
 --
 ALTER TABLE `table_news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `table_newscategory`
@@ -807,7 +867,7 @@ ALTER TABLE `table_newscategory`
 -- AUTO_INCREMENT for table `table_pariwisata`
 --
 ALTER TABLE `table_pariwisata`
-  MODIFY `pariwisata_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pariwisata_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `table_pemerintahan`
@@ -831,7 +891,7 @@ ALTER TABLE `table_perangkat`
 -- AUTO_INCREMENT for table `table_potency`
 --
 ALTER TABLE `table_potency`
-  MODIFY `potensi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `potensi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `table_suggestion`
@@ -862,6 +922,12 @@ ALTER TABLE `table_user`
 --
 ALTER TABLE `table_userprofile`
   MODIFY `userprofile_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `table_usia`
+--
+ALTER TABLE `table_usia`
+  MODIFY `usia_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `table_video`

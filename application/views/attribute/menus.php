@@ -33,43 +33,43 @@
                 </li-->
                 <li class="treeview">
                 <a href="#" >
-                    <i class="fa fa-history text-yellow"></i><span>Sejarah Desa</span>
+                    <i class="fa fa-history"></i><span>Sejarah Desa</span>
                       <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
                   </a>
           <ul class="treeview-menu">
                   <li class="active"><a href="<?php echo site_url('Sejarah_Desa')?>">
-                    <i class="fa fa-history text-red"></i><span>Sejarah Desa</span>
+                    <i class="fa fa-history"></i><span>Sejarah Desa</span>
                   </a>
                 </li>
                   <li class="active"><a href="<?php echo site_url('Sejarah_Pemerintahan')?>">
-                    <i class="fa fa-history text-red"></i><span>Sejarah Pemerintahan</span>
+                    <i class="fa fa-history"></i><span>Sejarah Pemerintahan</span>
                   </a>
                 </li>
         </ul>
           </li>
                   <li class="active"><a href="<?php echo site_url('Perangkat')?>" >
-                    <i class="fa fa-book text-aqua"></i><span>Perangkat Desa</span>
+                    <i class="fa fa-user"></i><span>Perangkat Desa</span>
                   </a>
                 </li>
         <li class="active"><a href="<?php echo site_url('Fasilitas')?>" >
-                    <i class="fa fa-calendar text-yellow"></i><span>Fasilitas Umum</span>
+                    <i class="fa fa-building"></i><span>Fasilitas Umum</span>
                   </a></li>
         <li class="treeview">
         <a href="#" >
-                    <i class="fa fa-money text-yellow"></i><span>Anggaran desa</span>
+                    <i class="fa fa-money"></i><span>Anggaran desa</span>
           <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
                   </a>
           <ul class="treeview-menu">
                   <li class="active"><a href="<?php echo site_url('Pendapatan')?>">
-                    <i class="fa fa-money text-green"></i><span>Pendapatan</span>
+                    <i class="fa fa-money"></i><span>Pendapatan</span>
                   </a>
                 </li>
                   <li class="active"><a href="<?php echo site_url('Belanja')?>">
-                    <i class="fa fa-money text-green"></i><span>Belanja</span>
+                    <i class="fa fa-money"></i><span>Belanja</span>
                   </a>
                 </li>
         </ul>
@@ -78,18 +78,30 @@
               </li>
                <li class="treeview">
                 <a href="#">
-                  <i class="fa fa-user "></i> <span>Demografi Desa</span>
+                  <i class="fa fa-list"></i> <span>Demografi Desa</span>
                   <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
                 </a>
                 <ul class="treeview-menu">
-                  <li class="active"><a href="<?php echo site_url('Penduduk')?>">
-                    <i class="fa fa-newspaper-o text-red"></i><span>Jumlah Penduduk</span>
+                  <li class="treeview"><a href="#">
+                    <i class="fa fa-users"></i><span>Jumlah Penduduk</span>
+                    <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
                   </a>
+                
+                <ul class="treeview-menu">
+                <li><a href="<?php echo site_url('Jenis')?>" >
+                    <i class="fa fa-circle"></i><span>Jenis Kelamin</span>
+                  </a></li>
+                  <li><a href="<?php echo site_url('Usia')?>" >
+                    <i class="fa fa-circle"></i><span>Usia</span>
+                  </a></li>  
+                </ul>
                 </li>
-        <li class="active"><a href="<?php echo site_url('Topografi')?>" >
-                    <i class="fa fa-calendar text-yellow"></i><span>Keadaan Iklim & Topografi</span>
+        <li><a href="<?php echo site_url('Topografi')?>" >
+                    <i class="fa fa-circle"></i><span>Keadaan Iklim & Topografi</span>
                   </a></li>
                 </ul>
               </li>
@@ -97,33 +109,33 @@
     <!-- Konten -->
               <li>
                 <a href="<?php echo site_url('Potensi');?>">
-                  <i class="fa fa-dashboard"></i> <span>Potensi Desa</span>
+                  <i class="fa fa-circle-o"></i> <span>Potensi Desa</span>
                 </a>
               </li>
         <!-- Konten -->
     <li>
           <a href="<?php echo site_url('Pariwisata');?>">
-            <i class="fa fa-"></i> <span>Pariwisata Desa</span>
+            <i class="fa fa-circle-o"></i> <span>Pariwisata Desa</span>
           </a>
       </li>
     <!-- Konten -->
               <li class="treeview">
                 <a href="#">
-                  <i class="fa fa-dashboard"></i> <span>Informasi</span>
+                  <i class="fa fa-list"></i> <span>Informasi</span>
                   <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
                 </a>
                 <ul class="treeview-menu">
                   <li class="active"><a href="<?php echo site_url('Berita')?>">
-                    <i class="fa fa-newspaper-o text-red"></i><span>Berita</span>
+                    <i class="fa fa-newspaper-o"></i><span>Berita</span>
                   </a>
                 </li>
                   <li><a href="<?php echo site_url('Agenda')?>" >
-                    <i class="fa fa-calendar text-yellow"></i><span>Kegiatan Desa</span>
+                    <i class="fa fa-calendar"></i><span>Kegiatan Desa</span>
                   </a></li>
                   <li><a href="<?php echo site_url('Berkas')?>" >
-                    <i class="fa fa-book text-aqua"></i><span>Mekanisme Ngurus Berkas</span>
+                    <i class="fa fa-book"></i><span>Mekanisme Ngurus Berkas</span>
                   </a>
                 </li>
                 </ul>
@@ -132,7 +144,7 @@
     <!-- Konten -->
                 <li class=" treeview">
                   <a href="#">
-                    <i class="fa fa-building"></i> <span>Galeri</span>
+                    <i class="fa fa-list"></i> <span>Galeri</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -140,11 +152,11 @@
                   <ul class="treeview-menu">
                     <li>
                       <a href="<?php echo site_url('Foto')?>" >
-                        <i class="fa fa-file-image-o text-red"></i> <span>Foto Desa</span>
+                        <i class="fa fa-file-image-o"></i> <span>Foto Desa</span>
                       </a>
                     </li>
                     <li><a href="<?php echo site_url('Foto_Kegiatan')?>" >
-                      <i class="fa fa-file-image-o text-green"></i> <span>Foto Kegiatan</span>
+                      <i class="fa fa-file-image-o"></i> <span>Foto Kegiatan</span>
                     </a></li>
                     <li><a href="<?php echo site_url('Video')?>" >
                       <i class="fa fa-video-camera"></i> <span>Video</span>

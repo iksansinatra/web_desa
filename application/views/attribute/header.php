@@ -38,7 +38,7 @@
         <ul class="nav navbar-nav">
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			<img class="nav-user-photo" src="<?php echo base_url()?>assets/avatars/user.jpg" alt="Jason's Photo" />
+			<!-- <img class="nav-user-photo" src="<?php echo base_url()?>assets/avatars/user.jpg" alt="Jason's Photo" /> -->
               <!--img src="<?php echo base_url();?>assets/image/icon.png" class="user-image" alt="User Image"-->
               <span class="user-info">
               <small>Welcome,</small>
@@ -48,7 +48,7 @@
 			  <!--span class="hidden-xs">Administrator</span-->
             </a>
 			<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                <li>
+                <!-- <li>
                   <a href="#">
                   <i class="ace-icon fa fa-cog"></i>
                   Settings
@@ -60,7 +60,7 @@
                   Profile
                   </a>
                 </li>
-                <li class="divider"></li>
+                <li class="divider"></li> -->
                 <li>
                   <a href="<?php echo site_url('home/logout')?>">
                   <i class="ace-icon fa fa-power-off"></i>

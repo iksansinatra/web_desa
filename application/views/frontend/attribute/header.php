@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Beranda / Desa Laywo Jaya</title>
-		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url()?>assets/q.png">
+		<title>Desa Laywo Jaya</title>
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url()?>assets/icon.png">
 		<!--link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet"-->
 		<link href="<?php echo base_url()?>assets/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="<?php echo base_url()?>assets/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
@@ -60,7 +60,7 @@
 					<div class="col-md-12">
 					<marquee>
 						<h3>
-							Selamat Datang di Website Laywo Jaya
+							Selamat Datang di Website Resmi Desa Laywo Jaya
 						</h3>
 					</marquee>
 					</div>
@@ -71,12 +71,11 @@
 		<div class="middel-part__block">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 logo col-md-12 d-flex align-items-center">
+					<div class="col-lg-2 logo col-md-12 d-flex align-items-center">
 
 							<a href="<?php echo base_url();?>">
-								<img src="<?php echo base_url()?>assets/assets/images/logo.png" alt="Logo">
-								</a>
-
+								<img width="65px" src="<?php echo base_url()?>assets/assets/images/icon.png" alt="Logo">
+								</a>			
 								 <div class="navbar-header">
 						<button type="button" class="navbar-toggle hidden-lg-up" data-toggle="collapse" data-target="#navbar-menu">
 							<i class="fa fa-bars"></i>
@@ -84,27 +83,28 @@
 
 					</div>
 					</div>
-					<div class="col-lg-8 col-md-12">
+					<div class="col-lg-10 col-md-12">
 						<div class="top-info__block text-right">
 							<ul>
 								<li>
 									<i class="fa fa-map-marker"></i>
 									<p>
-										<!-- 13005 Greenvile Avenue
-										<span> California, TX 70240</span> -->
+										Desa Laywo Jaya
+										<span> Kecamatan Wawonii Timur</span>
+										<span> Kabupaten Konawe Kepulauan</span>
 									</p>
 								</li>
 								<li>
 									<i class="fa fa-phone"></i>
 									<p>
-										<!-- Call Us
-										<span> +56 (0) 012 345 6789</span> -->
+										Hubungi Kami
+										<!-- <span> +56 (0) 012 345 6789</span> -->
 									</p>
 								</li>
 								<li>
 									<i class="fa fa-envelope" aria-hidden="true"></i>
 									<p>
-										<!-- Mail Us -->
+										E-Mail Kami
 										<span>
 											<!-- <a href="mailto:info@gmail.com">info@gmail.com</a> -->
 										</span>
@@ -145,7 +145,7 @@
 										<a href="<?php echo site_url('perangkat-desa');?>">Perangkat Desa</a>
 									</li>
 									<li>
-										<a href="#">Demografi Penduduk</a>
+										<a href="<?php echo site_url('home/penduduk');?>">Demografi Penduduk</a>
 									</li>
 									<li>
 										<a href="<?php echo site_url('fasilitas-desa');?>">Fasilitas Desa</a>

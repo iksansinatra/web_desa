@@ -36,10 +36,10 @@
 										<a href="<?php echo site_url('Home/fasilitas');?>">Fasilitas Desa</a>
 									</li>
 									<li>
-										<a href="#">Anggaran Desa</a>
+										<a href="<?php echo site_url('Home/anggaran');?>">Anggaran Desa</a>
 									</li>
 									<li>
-										<a href="#">Demografi Penduduk</a>
+										<a href="<?php echo site_url('Home/penduduk');?>">Demografi Penduduk</a>
 									</li>
 								</ul>
 							</div>

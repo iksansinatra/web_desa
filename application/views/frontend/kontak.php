@@ -25,7 +25,7 @@
 						<div class="col-lg-8">
 
 							<div class="headeing pb-30">
-								<h2>Get in Touch</h2>
+								<h2>Desa Laywo Jaya</h2>
 								<span class="b-line l-left line-h"></span>
 							</div>
 							<img src="<?php echo base_url()?>assets/foto/file_1538669068.jpeg" height="300" width="850" alt=""  class="rev-slidebg" >
@@ -33,7 +33,7 @@
 
 						<div class="col-lg-4 contact mt-sm-30 mt-xs-30">
 							<div class="headeing pb-20">
-								<h2>Contact Info</h2>
+								<h2>Info Kontak</h2>
 								<span class="b-line l-left line-h"></span>
 							</div>
 							<div class="contact-info">
@@ -43,10 +43,13 @@
 										<div class="icon ion-ios-location"></div>
 										<div class="content">
 											<p>
-												123 Main Street, St. NW Ste,
+												Desa Laywo Jaya
 											</p>
 											<p>
-												1 Washington, DC,USA.
+												Kecamatan Wawonii Timur
+											</p>
+											<p>
+												Kabupaten Konawe Kepulauan
 											</p>
 										</div>
 									</li>
@@ -55,10 +58,10 @@
 										<div class="icon ion-android-call"></div>
 										<div class="content">
 											<p>
-												200 256 265 000
+												Hubungi Kami
 											</p>
 											<p>
-												200 256 265 000
+												
 											</p>
 										</div>
 									</li>
@@ -66,10 +69,10 @@
 										<div class="icon ion-ios-email"></div>
 										<div class="content">
 											<p>
-												Support@yourmail.com
+												E-mail Kami
 											</p>
 											<p>
-												http://admin@.com
+												
 											</p>
 										</div>
 									</li>
