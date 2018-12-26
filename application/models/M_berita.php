@@ -38,7 +38,7 @@ class M_berita extends CI_Model{
 
 	public function tampil_detail_berita($id) {
 
-        $query  = $this->db->query("select * from table_news where news_id='$id'");
+        $query  = $this->db->query("select * from table_news where news_id=?",array($id));
         return $query->result();
     }
 

@@ -38,10 +38,10 @@ class Foto extends CI_Controller {
             {
                 $gbr = $this->upload->data();
                 $data = array(
-               
-				'image_file' =>$gbr['file_name'],
+
+				        'image_file' =>$gbr['file_name'],
                   'image_name' =>$this->input->post('image_name'),
-				  'image_desc' =>$this->input->post('image_desc'),
+				        'image_desc' =>$this->input->post('image_desc'),
                     );
                 $this->M_foto->input($data);
             }
@@ -63,7 +63,7 @@ class Foto extends CI_Controller {
 
     public function edit() {
         //get data
-      
+
         $this->load->library('upload');
         $nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
         $config['upload_path'] = './assets/foto/'; //path folder
@@ -77,13 +77,13 @@ class Foto extends CI_Controller {
 
         if($_FILES['gambar']['name'])
          {
-          unlink('./assets/foto/'.$this->input->post('image_file'));
+            unlink('./assets/foto/'.$this->input->post('image_file'));
              if ($this->upload->do_upload('gambar'))
              {
                  $gbr = $this->upload->data();
                  $data = array(
-				'image_id' =>$this->input->post('image_id'),
-				'image_file' =>$gbr['file_name'],
+				         'image_id' =>$this->input->post('image_id'),
+				         'image_file' =>$gbr['file_name'],
                  'image_name' =>$this->input->post('image_name'),
                  'image_desc' =>$this->input->post('image_desc'),
                    // 'gambar' =>$gbr['file_name'],
